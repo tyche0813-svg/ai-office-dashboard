@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-16T22:02:02+09:00",
+ "updated_at": "2026-11-16T22:11:26+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "agents": [
   {
@@ -111,11 +111,11 @@
    "id": "claude",
    "name": "Claude 과장",
    "role": "파이프라인 총괄",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "파이프라인 지휘 중",
-   "task": "전체 파이프라인 진행 관리 중",
-   "last_active": "2026-11-16T22:01:16+09:00"
+   "status": "idle",
+   "zone": "lounge",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중",
+   "last_active": "2026-11-16T22:06:07+09:00"
   },
   {
    "id": "browser",
