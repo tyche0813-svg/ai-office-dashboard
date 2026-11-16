@@ -1,9 +1,17 @@
 {
- "updated_at": "2026-11-16T22:12:18+09:00",
+ "updated_at": "2026-11-16T22:36:12+09:00",
  "source": "pickle",
- "summary": { "done_today": 0 },
+ "summary": {
+  "done_today": 0
+ },
  "cast": [
-  { "id": "pickle", "status": "idle", "bubble": "요청 대기", "task": "요청 대기 (템플릿 · 피클 앱 연결 전)", "last_active": "" }
+  {
+   "id": "pickle",
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "노션 연락판 대기",
+   "last_active": ""
+  }
  ],
  "agents": [],
  "logs": []
