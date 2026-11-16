@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import pc_watch as pw  # noqa: E402
+import notion_push as npush  # noqa: E402
 
 NOW = datetime(2026, 1, 5, 14, 0, 0, tzinfo=pw.KST)
 FAKE_ID_A = "tester0123456"
@@ -288,6 +289,59 @@ class BuildTest(unittest.TestCase):
         raw2["claude_session"] = NOW
         p2, _ = pw.build_status(raw2, CFG, self.events)
         self.assertEqual(pw.signature(self.payload), pw.signature(p2))
+
+
+class NotionPushTest(unittest.TestCase):
+    """노션 연락판 AI(피클·Instinct·Pally): 줄 수만 받아 고정 문구로만 내보낸다."""
+
+    def test_states_and_fixed_phrases(self):
+        st = {}
+        t0 = NOW
+        self.assertEqual(npush.note_count(st, "instinct", 3, t0), 0)          # 첫 기록은 기준선(보고로 세지 않음)
+        p = npush.build_payload(st, t0)
+        by = {c["id"]: c for c in p["cast"]}
+        self.assertEqual(by["instinct"]["status"], "idle")
+        self.assertEqual(by["pickle"]["status"], "offline")                    # 아직 연결 확인 전
+        self.assertEqual(by["pally"]["task"], "연결 안 됨 · 연락판 연결 전")
+        t1 = t0 + timedelta(minutes=5)
+        self.assertEqual(npush.note_count(st, "instinct", 5, t1), 2)
+        p = npush.build_payload(st, t1 + timedelta(minutes=10))
+        by = {c["id"]: c for c in p["cast"]}
+        self.assertEqual((by["instinct"]["status"], by["instinct"]["bubble"]), ("working", "작업 보고 중"))
+        self.assertEqual(p["summary"]["done_today"], 2)
+        self.assertEqual([e["title"] for e in p["events"]], ["Instinct → 클로드: 연락판 보고"])
+        self.assertEqual(npush.build_payload(st, t1 + timedelta(minutes=40))["cast"][1]["status"], "resting")
+        self.assertEqual(npush.build_payload(st, t1 + timedelta(minutes=90))["cast"][1]["status"], "idle")
+        self.assertEqual(npush.note_count(st, "instinct", 5, t1 + timedelta(minutes=91)), 0)   # 줄 수가 같으면 보고 아님
+
+    def test_schema_and_no_leak(self):
+        st = {}
+        npush.note_count(st, "pickle", 1, NOW)
+        npush.note_count(st, "pickle", 2, NOW + timedelta(minutes=1))
+        st["events"].append({"time": "어제", "agent": SECRETS[2]})               # 깨진 기록은 버려진다
+        st["pickle"]["last"] = SECRETS[0]                                        # 식별 문자열이 끼어도 내보내지 않는다
+        p = npush.build_payload(st, NOW + timedelta(minutes=2))
+        self.assertEqual(set(p), {"updated_at", "source", "summary", "cast", "events", "agents", "logs"})
+        self.assertEqual(pw.find_leaks(p), [])
+        text = json.dumps(p, ensure_ascii=False)
+        for s in SECRETS:
+            self.assertNotIn(s, text)
+        for c in p["cast"]:
+            self.assertEqual(set(c), {"id", "name", "role", "status", "bubble", "task", "last_active"})
+            self.assertIn(c["id"], npush.AGENTS)
+            self.assertIn((c["bubble"], c["task"]), set(npush.PHRASES.values()))
+        self.assertEqual(len(p["events"]), 1)
+
+    def test_run_writes_only_generic_file(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            out, state = Path(d) / "notion-agents.json", Path(d) / "state.json"
+            self.assertEqual(npush.run("instinct", 4, push=False, now=NOW, out_file=out, state_file=state), 0)
+            self.assertEqual(npush.run("instinct", 6, push=False, now=NOW + timedelta(minutes=3), out_file=out, state_file=state), 0)
+            p = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(pw.find_leaks(p), [])
+            self.assertEqual({c["id"]: c["status"] for c in p["cast"]}["instinct"], "working")
+            self.assertEqual(npush.run("nobody", 1, push=False, now=NOW, out_file=out, state_file=state), 2)
 
 
 if __name__ == "__main__":

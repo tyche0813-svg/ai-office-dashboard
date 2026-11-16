@@ -94,6 +94,12 @@
 - Worker 도 받은 JSON 을 다시 검사합니다: 60KB 초과, 모르는 키, 80자 넘는 문자열, 식별 패턴(경로·이메일·아이디·IP·전화·금액 등)이 하나라도 있으면 저장하지 않습니다.
 - 감시 스크립트는 20초마다 상태를 보고, 내용이 바뀌었거나 2분이 지나면 올립니다. git 푸시는 30분마다(또는 일하는 AI 가 바뀌고 10분 뒤) 백업용으로만 합니다.
 - 배포: `cd worker` → `npx wrangler deploy`. 토큰 교체: 환경 변수와 `npx wrangler secret put PUSH_TOKEN` 을 같은 값으로.
+## 노션 연락판 AI(피클 · Instinct · Pally)
+
+- `python tools/notion_push.py <pickle|instinct|pally> <줄 수>` → `data/notion-agents.json`. 줄 수 = 그 AI 연락판의 'AI → 클로드' 아래 줄 수(양식 줄 제외). 글 내용은 받지 않습니다.
+- 줄 수가 늘면 '방금 보고'로 보고 20분 작업 중 → 60분까지 휴식 → 대기. 한 번도 기록이 없는 AI 는 '연결 안 됨'. 화면은 마지막 보고 시각으로 상태를 스스로 다시 계산합니다.
+- 줄 수 기록은 `local/notion_state.json`(비공개). 바뀐 때만 그 파일 하나를 커밋·푸시합니다. `local/notion_push.py`, `local/pickle_push.py` 는 같은 코드를 부르는 껍데기입니다.
+
 ## 앱으로 설치(PWA)
 
 - `manifest.json` + `sw.js` + `assets/app/`(직접 그린 아이콘). 같은 주소에서 '앱 설치'를 누르면 휴대폰·PC 에 앱으로 들어갑니다.

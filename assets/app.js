@@ -8,7 +8,11 @@
   'use strict';
 
   var LIVE_URL = 'https://ai-office-live.btc-indicator-mobile.workers.dev/status';
-  var FILE_URL = 'data/pc-status.json', PICKLE_URL = 'data/pickle-status.json';
+  var FILE_URL = 'data/pc-status.json', NOTION_URL = 'data/notion-agents.json', PICKLE_URL = 'data/pickle-status.json';
+  /* 노션 연락판으로 일하는 AI: 상태는 data/notion-agents.json(없으면 예전 피클 파일)에서만 받는다 */
+  var NOTION_IDS = { pickle: 1, instinct: 1, pally: 1 };
+  var NOTION_WORK_MS = 20 * 60000, NOTION_REST_MS = 60 * 60000;
+  var NOTION_TEXT = { working: ['작업 보고 중', '노션 연락판에 작업 결과 보고'], resting: ['보고 완료', '노션 연락판 보고 완료'], idle: ['요청 대기', '노션 연락판 대기'] };
   var LIVE_MS = 5000, FILE_MS = 45000;
   var LIVE_FRESH_MS = 5 * 60 * 1000;    /* 실시간 채널 값이 이보다 오래되면 백업 파일도 본다 */
   var STALE_MS = 10 * 60 * 1000;        /* 이보다 오래되면 '갱신 지연' */
@@ -42,7 +46,9 @@
     { id: 'claudeapi', name: 'Claude API', tag: 'API', role: '캐러셀 문구', color: '#fb923c', icon: 'claude', chest: 'API' },
     { id: 'copilot', name: 'Copilot', tag: 'Copilot', role: '이미지 · 가끔', color: '#c4b5fd', icon: 'copilot' },
     { id: 'pickle', name: '피클', tag: '피클', role: '클라우드 비서', color: '#7ccf6b', mark: '피', src: 'pickle' },
-    { id: 'stability', name: 'Stability', tag: 'Stability', role: '이미지 · 중단', color: '#a78bfa', icon: 'stability' }
+    { id: 'stability', name: 'Stability', tag: 'Stability', role: '이미지 · 중단', color: '#a78bfa', icon: 'stability' },
+    { id: 'instinct', name: 'Instinct', tag: 'Instinct', role: '일정 · 자료 조사 · 콘텐츠', color: '#e2e8f0', mark: 'I', plate: '#ffffff', serif: true, src: 'pickle' },
+    { id: 'pally', name: 'Pally', tag: 'Pally', role: '노션 비서', color: '#64748b', icon: 'pally', src: 'pickle' }
   ];
   var CAST_BY = {};
   CAST.forEach(function (c) { CAST_BY[c.id] = c; });
@@ -57,7 +63,8 @@
     ceo: { label: '대표님', rect: [0, 0, 3.5, 4.8], door: [2.4, 4.8], tint: '#2a2440' },
     meeting: { label: '관제탑 · 회의실', rect: [3.5, 0, 8.5, 4.8], door: [6.0, 4.8], tint: '#1c2b45' },
     lounge: { label: '휴게실', rect: [8.5, 0, 12.5, 4.8], door: [10.5, 4.8], tint: '#33283a' },
-    server: { label: '서버실', rect: [12.5, 0, 16, 4.8], door: [14.25, 4.8], tint: '#17303a' },
+    server: { label: '서버실 · 노션 비서', rect: [12.5, 0, 16, 4.8], door: [14.25, 4.8], tint: '#17303a',
+      gate: [[14.25, 3.6], [14.25, 1.95]], zone: function (y) { return y < 3.15 ? 1 : 0; } },
     blog: { label: '블로그 데스크', rect: [0, 6, 4.7, 12], door: [2.52, 6], tint: '#18263a', gate: gateAt(2.52), zone: bottomZone, screen: '#5eead4' },
     video: { label: '영상 · 개발 · 검수', rect: [4.7, 6, 11.3, 12], door: [6.92, 6], tint: '#221f3d', gate: gateAt(6.92), zone: bottomZone, screen: '#f9a8d4' },
     carousel: { label: '캐러셀 · 이미지', rect: [11.3, 6, 16, 12], door: [13.52, 6], tint: '#1b3035', gate: gateAt(13.52), zone: bottomZone, screen: '#fde047' }
@@ -73,6 +80,8 @@
       DESKS.push({ id: id, room: c[0], x: (row ? 0.5 : 1.05) + 2.2 * c[1], y: row ? ROW1 : ROW0, w: DESK_W, zone: row });
     });
   });
+  DESKS.push({ id: 'instinct', room: 'server', x: 12.75, y: 2.3, w: 1.1, zone: 1 });
+  DESKS.push({ id: 'pally', room: 'server', x: 14.65, y: 2.3, w: 1.1, zone: 1 });
   var HOME = { claude: { room: 'meeting', p: CLAUDE_HOME, zone: 0 } };
   DESKS.forEach(function (d) { HOME[d.id] = { room: d.room, p: [d.x + d.w / 2, d.y - 0.35], zone: d.zone, desk: d }; });
   /* 휴게실 자리·회의 자리: 화면에서 좌우로 1.6 칸 이상 어긋나게 */
@@ -187,7 +196,7 @@
         ag('shorts', '쇼츠 작업자', 'working', '쇼츠 파이프라인 1건 진행 중'), ag('reels', '릴스 작업자', 'idle', '대기'), ag('clip', '클립 작업자', 'offline', '실행 중 아님'),
         ag('carousel', '캐러셀 작업자', 'idle', '대기'), ag('insta', '인스타 콘텐츠 작업자', 'idle', '대기'), ag('pubcheck', '발행 체크 수집기', 'idle', '대기'), ag('insight', '인사이트 수집기', 'idle', '대기')],
       logs: [] } },
-    pickle: { ok: true, updated: now, data: { updated_at: now.toISOString(), cast: [c('pickle', 'working', '이미지 준비 중', '이미지 요청 처리 중', 30)], agents: [], logs: [] } } };
+    pickle: { ok: true, updated: now, data: { updated_at: now.toISOString(), cast: [c('pickle', 'working', '', '', 30), c('instinct', 'idle', '', '', 2400)], agents: [], logs: [] } } };
   }
 
   function legacyCast(agents) {
@@ -215,8 +224,8 @@
       if (!r.ok) return;
       var d = r.data;
       var age = r.updated ? Date.now() - r.updated.getTime() : Infinity;
-      r.stale = age > STALE_MS;
-      var dead = age > DEAD_MS;
+      r.stale = key === 'pc' && age > STALE_MS;          /* 노션 파일은 바뀔 때만 올라오니 '지연'으로 보지 않는다 */
+      var dead = key === 'pc' && age > DEAD_MS;
       var sum = d.summary && typeof d.summary === 'object' ? d.summary : {};
       var n = Number(sum.done_today);
       if (isFinite(n) && n > 0) done += Math.floor(n);
@@ -225,11 +234,18 @@
       var castArr = legacy ? (key === 'pc' ? legacyCast(agents) : []) : d.cast;
       castArr.forEach(function (c) {
         if (!c || typeof c !== 'object' || !cast[c.id]) return;
-        if ((key === 'pickle') !== (c.id === 'pickle')) return;   /* 피클 파일은 피클만, PC 쪽은 나머지만 */
+        if ((key === 'pickle') !== !!NOTION_IDS[c.id]) return;   /* 노션 파일은 노션 비서만, PC 쪽은 나머지만 */
         var m = cast[c.id];
         var st = c.status === 'meeting' ? 'working' : (STATUS[c.status] ? c.status : 'idle');
         m.status = st; m.bubble = str(c.bubble, 18); m.task = str(c.task, 80) || STATUS[st].label;
         m.last = parseTime(c.last_active); m.known = true;
+        if (key === 'pickle' && st !== 'offline') {
+          /* 노션 비서: 파일은 바뀔 때만 올라오므로 '마지막 보고 뒤 몇 분'으로 화면에서 다시 계산 */
+          var ageN = m.last ? Date.now() - m.last.getTime() : Infinity;
+          m.status = ageN <= NOTION_WORK_MS ? 'working' : (ageN <= NOTION_REST_MS ? 'resting' : 'idle');
+          m.bubble = NOTION_TEXT[m.status][0]; m.task = NOTION_TEXT[m.status][1];
+          return;
+        }
         if (dead && (st === 'working' || st === 'resting')) { m.status = 'idle'; m.bubble = ''; m.task = '상태 갱신 지연 · 최근 상태 확인 불가'; }
       });
       agents.forEach(function (a) {
@@ -272,6 +288,9 @@
     logs.sort(function (a, b) { return (b.t ? b.t.getTime() : 0) - (a.t ? a.t.getTime() : 0); });
     events.sort(function (a, b) { return b.t.getTime() - a.t.getTime(); });
     /* vooy: 활동 신호를 아직 모른다 -> '대기'가 아니라 '연결 안 됨'(회색)으로 보여 준다 */
+    ['instinct', 'pally'].forEach(function (id) {
+      if (!cast[id].known) { cast[id].status = 'offline'; cast[id].bubble = ''; cast[id].task = '연결 안 됨 · 연락판 연결 전'; }
+    });
     var v = cast.vooy;
     if (!v.known || /미설정/.test(v.task)) { v.status = 'offline'; v.bubble = ''; v.task = '연결 안 됨 · 활동 신호 미확인'; }
     state.cast = CAST.map(function (c) { return cast[c.id]; });
@@ -308,7 +327,10 @@
     if (state.demo) { var d = demoData(); state.pc = d.pc; state.pickle = d.pickle; state.mode = 'demo'; apply(); return Promise.resolve(); }
     var jobs = [fetchJson(LIVE_URL)], now = Date.now();
     var wantPickle = now - lastPickle >= FILE_MS - 500;
-    if (wantPickle) { lastPickle = now; jobs.push(fetchJson(PICKLE_URL)); }
+    if (wantPickle) {
+      lastPickle = now;
+      jobs.push(fetchJson(NOTION_URL).then(function (r) { return r.ok && Array.isArray(r.data.cast) ? r : fetchJson(PICKLE_URL); }));
+    }
     return Promise.all(jobs).then(function (res) {
       var live = res[0];
       if (wantPickle) state.pickle = res[1];
@@ -494,7 +516,7 @@
       q.textContent = def.chest;
     }
     /* 머리: 흰 배지 위에 공식 아이콘(변형 없음) */
-    c.plate = s('rect', { x: -13.5, y: -51, width: 27, height: 27, rx: 7.5, fill: def.icon ? '#ffffff' : col, 'stroke-width': 2 }, b);
+    c.plate = s('rect', { x: -13.5, y: -51, width: 27, height: 27, rx: 7.5, fill: def.icon ? '#ffffff' : (def.plate || col), 'stroke-width': 2 }, b);
     if (def.dashed) c.plate.setAttribute('stroke-dasharray', '3 2.5');
     if (def.icon) {
       var cid = 'clip-' + c.id;
@@ -504,6 +526,7 @@
       im.setAttribute('href', ICON_DIR + def.icon + '.png');
     } else {
       var mk = s('text', { x: 0, y: -32, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 800, fill: '#0b0f17' }, b);
+      if (def.serif) { mk.setAttribute('font-family', 'Georgia, "Times New Roman", serif'); mk.setAttribute('font-size', 19); mk.setAttribute('y', -30.5); }
       mk.textContent = def.mark || def.name.slice(0, 1);
     }
     c.lamp = s('circle', { cx: 11, cy: -49, r: 3.4, stroke: '#0b0f17', 'stroke-width': 1 }, b);
@@ -916,8 +939,9 @@
       el.style.boxShadow = 'inset 0 0 0 2px ' + a.color;
     } else {
       el.textContent = def && def.mark ? def.mark : a.name.slice(0, 1);
-      el.style.background = a.color || STATUS[a.status].color;
-      el.style.boxShadow = 'none';
+      el.style.background = (def && def.plate) || a.color || STATUS[a.status].color;
+      el.style.fontFamily = def && def.serif ? 'Georgia, "Times New Roman", serif' : '';
+      el.style.boxShadow = def && def.plate ? 'inset 0 0 0 2px ' + a.color : 'none';
     }
   }
   function dot(color) { var d = h('span', 'dot'); d.style.background = color; return d; }
@@ -1007,7 +1031,7 @@
   function renderFoot() {
     var foot = $('footStatus'); foot.textContent = '';
     var modeText = { live: '실시간 채널', file: '백업 파일', demo: '데모', none: '연결 안 됨' }[state.mode];
-    [['PC', state.pc, modeText], ['피클', state.pickle, '상태 파일']].forEach(function (x) {
+    [['PC', state.pc, modeText], ['노션 비서', state.pickle, '마지막 변경']].forEach(function (x) {
       var i = x[1], row = h('div'), cls, txt;
       if (!i.ok) { cls = 'bad'; txt = '불러오지 못함'; }
       else if (!i.updated) { cls = 'late'; txt = '시각 정보 없음'; }
