@@ -10,7 +10,7 @@ body{background:var(--bg);color:var(--text);
   -webkit-text-size-adjust:100%}
 button{font:inherit;color:inherit;cursor:pointer}
 
-.app{display:grid;grid-template-columns:minmax(0,7fr) minmax(300px,3fr);height:100vh;height:100dvh}
+.app{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,27vw,400px);height:100vh;height:100dvh}
 
 /* ---------- map ---------- */
 .map-pane{position:relative;min-width:0;overflow:hidden;
@@ -111,7 +111,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .agent .role{font-weight:500;font-size:11px;color:var(--muted)}
 .agent .sub{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .agent .when{font-size:11.5px;color:var(--muted)}
-.avatar.sm{width:34px;height:34px;border-radius:11px}
+.avatar{overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:contain;display:block;padding:3px;border-radius:inherit}
+.avatar.sm{width:40px;height:40px;border-radius:12px}
+.avatar.xs{width:18px;height:18px;border-radius:6px;font-size:10px;margin-left:-3px}
+.avatar.xs img{padding:1px}
 .agent.s-working{border-color:rgba(52,211,153,.45)}
 .agent.s-offline{opacity:.6}
 .sec-h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;margin:14px 0 8px}
@@ -134,7 +138,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 @media (max-width:860px){
   html,body{height:auto}
   .app{display:block;height:auto}
-  .map-pane{height:70vw;min-height:300px;max-height:64vh}
+  .map-pane{height:88vw;min-height:320px;max-height:70vh}
   .side{border-left:0;border-top:1px solid var(--line)}
   .tabbody{overflow:visible;min-height:220px}
   .map-head{right:140px;left:12px;top:10px}
