@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-16T22:13:38+09:00",
+ "updated_at": "2026-11-16T22:15:51+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "agents": [
   {
@@ -115,7 +115,7 @@
    "zone": "desk",
    "bubble": "파이프라인 지휘 중",
    "task": "전체 파이프라인 진행 관리 중",
-   "last_active": "2026-11-16T22:13:32+09:00"
+   "last_active": "2026-11-16T22:13:44+09:00"
   },
   {
    "id": "browser",
@@ -141,10 +141,10 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
    "last_active": "2026-11-16T22:12:21+09:00"
   },
   {
