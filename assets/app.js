@@ -778,9 +778,9 @@
   function fitUi() { state.ui = clamp(svgScale() / state.view.k * 0.75, 1.0, 1.35); }
   function defaultView() {
     var r = $('map').getBoundingClientRect();
-    var k = r.width && r.width < 620 && r.height > r.width * 0.7 ? clamp(640 / r.width, 1, 1.75) : 1;
-    /* 책상이 모인 곳(지도 좌표 25, 235)을 화면 가운데로 */
-    return k > 1.01 ? { k: k, x: 65 - 25 * k, y: 145 - 235 * k } : { k: 1, x: 0, y: 0 };
+    var k = r.width && r.width < 620 && r.height > r.width * 0.7 ? clamp(600 / r.width, 1, 1.7) : 1;
+    /* 책상이 모인 곳(지도 좌표 -22, 205)을 화면 가운데로 */
+    return k > 1.01 ? { k: k, x: 65 + 22 * k, y: 145 - 205 * k } : { k: 1, x: 0, y: 0 };
   }
   function initMapControls() {
     var map = $('map');
