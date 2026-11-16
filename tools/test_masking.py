@@ -30,9 +30,13 @@ SECRETS = [
     "https://example.com/thread/3e70dbab-5a82-482f-a9fb-7d2624b36706",
     "서울시 강서구 가짜로 123",
     "가짜 키워드 원문 제목입니다",
+    "192.168.10.24",
     FAKE_ID_A, FAKE_ID_B,
 ]
-CFG = dict(pw.DEFAULTS, blog_teams={FAKE_ID_A: "A"}, sensitive_terms=[FAKE_USER, "가짜 키워드"])
+CFG = dict(pw.DEFAULTS, blog_teams={FAKE_ID_A: "A"}, sensitive_terms=[FAKE_USER, "가짜 키워드"],
+           vooy_signal={"process": "fakevooy9876", "path": r"C:\Users\fakeuser\vooy\state.json", "active_min": 10})
+CAST_IDS = ["claude", "muse", "aside", "exaone", "chatgpt", "copilot", "speech", "claudeapi", "codex", "stability",
+            "opus", "fable", "routine", "vooy"]
 
 FORBIDDEN = [
     ("경로", re.compile(r"(?i)[a-z]:[\\/]|\\\\|/Users/|/home/")),
@@ -42,6 +46,7 @@ FORBIDDEN = [
     ("전화", re.compile(r"01[016789][-\s.]?\d{3,4}[-\s.]?\d{4}")),
     ("링크", re.compile(r"https?://")),
     ("긴 숫자", re.compile(r"\d{7,}")),
+    ("IP", re.compile(r"(?:\d{1,3}\.){3}\d{1,3}")),
 ]
 
 
@@ -49,7 +54,7 @@ def fake_raw():
     """식별 정보가 잔뜩 섞인 가짜 스캔 결과."""
     def app(**kw):
         base = {"exists": True, "poller": True, "job_procs": 0, "current_job": False, "current_job_mtime": None,
-                "events": [], "stage": None, "stage_time": None, "muse": [], "speech": [], "last_log": None}
+                "events": [], "stage": None, "stage_time": None, "muse": [], "speech": [], "copy": [], "last_log": None}
         base.update(kw)
         return base
     m = lambda n: NOW - timedelta(minutes=n)  # noqa: E731
@@ -61,7 +66,18 @@ def fake_raw():
             {"pid": 3, "name": "Aside.exe", "cmd": "Aside.exe --profile-directory=Default", "created": ""},
             {"pid": 4, "name": "pythonw.exe", "cmd": "pythonw.exe bridge.py", "created": ""},
             {"pid": 5, "name": "python.exe", "cmd": r"python C:\Users\fakeuser\dev\publish_check_app\collector\collect.py --loop", "created": ""},
+            {"pid": 6, "name": "powershell.exe", "cmd": r"powershell -File C:\Users\fakeuser\work\scripts\ar.ps1 -File " + SECRETS[1] + r"\x.js", "created": ""},
         ],
+        "signals": {
+            "aside": {"running": True, "last": NOW, "scr_last": m(6), "run_last": m(2)},
+            "muse": {"running": False, "last": m(3), "scr_last": m(9), "run_last": m(3)},
+            "exaone": {"running": False, "last": m(50), "scr_last": None, "run_last": m(50)},
+            "chatgpt": {"running": False, "last": None, "scr_last": None, "run_last": None},
+            "copilot": {"running": False, "last": m(1), "scr_last": None, "run_last": m(1)},
+            "codex": {"running": False, "last": None, "scr_last": None, "run_last": None},
+        },
+        "subagents": {"opus": m(1), "fable": m(30)},
+        "vooy": {"configured": True, "running": False, "last": m(400)},
         "apps": {
             "shorts": app(job_procs=1, stage="voice", stage_time=m(3), events=[(m(40), "start")], muse=[m(4)], speech=[m(2)]),
             "reels": app(events=[(m(90), "start"), (m(80), "end")]),
@@ -72,8 +88,8 @@ def fake_raw():
         },
         "blog": {
             "exists": True,
-            "today_dirs": [{"account": FAKE_ID_A, "slot": "19", "mtime": m(5)},
-                           {"account": FAKE_ID_B, "slot": "20", "mtime": m(200)}],
+            "today_dirs": [{"account": FAKE_ID_A, "slot": "19", "mtime": m(5), "start": m(12)},
+                           {"account": FAKE_ID_B, "slot": "20", "mtime": m(200), "start": None}],
             "rows_today": [{"time": m(300), "account": FAKE_ID_A, "saved": True},
                            {"time": m(210), "account": FAKE_ID_B, "saved": True}],
             "accounts": {FAKE_ID_A, FAKE_ID_B},
@@ -100,10 +116,12 @@ class MaskTest(unittest.TestCase):
         self.assertEqual(pw.mask("문의 a.b@c-d.co.kr 로"), "문의 [이메일] 로")
         self.assertEqual(pw.mask("수익 12,300원 발생"), "수익 [금액] 발생")
         self.assertEqual(pw.mask("계정 abc02071227 확인"), "계정 [아이디] 확인")
+        self.assertEqual(pw.mask("접속 10.0.12.7 에서"), "접속 [IP] 에서")
 
     def test_safe_phrases_survive(self):
         for s in ["블로그 원고 1건 임시저장", "쇼츠 파이프라인 1건 완료", "이미지 생성 대기",
-                  "오늘 원고 2건 임시저장 · 다음 슬롯 대기", "Claude 과장", "블로그팀 A"]:
+                  "오늘 원고 2건 임시저장 · 다음 슬롯 대기", "블로그팀 A", "Azure Speech", "Claude API", "Opus 보조",
+                  "클로드 → 뮤즈: 초안·사진 요청", "지시받은 작업 지휘 중 · AI 3명 가동", "회의 시작: 블로그 슬롯"]:
             self.assertEqual(pw.mask(s), s)
 
     def test_length_cap(self):
@@ -126,11 +144,13 @@ class MaskTest(unittest.TestCase):
 
 class BuildTest(unittest.TestCase):
     def setUp(self):
-        self.payload, self.terms = pw.build_status(fake_raw(), CFG)
+        raw = fake_raw()
+        self.events = pw.derive_events(None, pw.event_marks(raw, CFG), NOW)
+        self.payload, self.terms = pw.build_status(raw, CFG, self.events)
         self.text = json.dumps(self.payload, ensure_ascii=False)
 
     def test_no_secret_in_output(self):
-        for s in SECRETS + [FAKE_USER, "fakeuser", "blog_runs", "shorts_app"]:
+        for s in SECRETS + [FAKE_USER, "fakeuser", "blog_runs", "shorts_app", "fakevooy", "state.json", "ar.ps1"]:
             self.assertNotIn(s.lower(), self.text.lower(), s)
 
     def test_no_forbidden_pattern_outside_timestamps(self):
@@ -153,6 +173,91 @@ class BuildTest(unittest.TestCase):
         for l in p["logs"]:
             self.assertEqual(set(l), {"time", "agent", "title", "detail"})
             self.assertRegex(l["time"], pw.TS_RE)
+        self.assertEqual(set(p), {"updated_at", "source", "summary", "cast", "events", "agents", "logs"})
+
+    def test_cast_schema(self):
+        cast = self.payload["cast"]
+        self.assertEqual(sorted(c["id"] for c in cast), sorted(CAST_IDS))
+        self.assertEqual(cast[0]["id"], "claude")
+        for c in cast:
+            self.assertEqual(set(c), {"id", "name", "role", "status", "bubble", "task", "last_active"})
+            self.assertIn(c["status"], pw.CAST_STATUS)
+            self.assertEqual((c["name"], c["role"]), pw.CAST_INFO[c["id"]])
+            self.assertTrue(c["last_active"] == "" or pw.TS_RE.match(c["last_active"]))
+            self.assertLessEqual(len(c["bubble"]), 18)
+
+    def test_cast_statuses(self):
+        by = {c["id"]: c for c in self.payload["cast"]}
+        self.assertEqual(by["claude"]["status"], "working")
+        self.assertEqual(by["aside"]["bubble"], "에디터 입력 중")      # 실행 중 + 블로그 작업 중
+        self.assertEqual(by["muse"]["status"], "working")
+        self.assertEqual(by["opus"]["status"], "working")
+        self.assertEqual(by["fable"]["status"], "idle")              # 30분 전 흔적 -> 쉬는 시간도 지남
+        self.assertEqual(by["exaone"]["status"], "idle")
+        self.assertEqual(by["copilot"]["status"], "working")
+        self.assertEqual(by["chatgpt"]["status"], "idle")
+        self.assertEqual(by["speech"]["status"], "working")
+        self.assertEqual(by["codex"]["status"], "offline")
+        self.assertEqual(by["stability"]["status"], "offline")
+        self.assertEqual(by["routine"]["status"], "idle")            # 14시는 새벽 시간대가 아님
+        self.assertEqual(by["vooy"]["status"], "idle")               # 신호는 있지만 오래됨
+
+    def test_vooy_default_idle_and_configurable(self):
+        raw = fake_raw()
+        raw["vooy"] = {"configured": False, "running": False, "last": None}
+        by = {c["id"]: c for c in pw.build_status(raw, dict(pw.DEFAULTS))[0]["cast"]}
+        self.assertEqual((by["vooy"]["status"], by["vooy"]["task"]), ("idle", "활동 신호 미설정 · 대기"))
+        raw["vooy"] = {"configured": True, "running": True, "last": NOW}
+        payload, terms = pw.build_status(raw, CFG)
+        by = {c["id"]: c for c in payload["cast"]}
+        self.assertEqual(by["vooy"]["status"], "working")
+        self.assertEqual(pw.find_leaks(payload, terms), [])
+
+    def test_resting_after_recent_work(self):
+        raw = fake_raw()
+        raw["subagents"]["fable"] = NOW - timedelta(minutes=8)
+        by = {c["id"]: c for c in pw.build_status(raw, CFG)[0]["cast"]}
+        self.assertEqual(by["fable"]["status"], "resting")
+
+    def test_events_only_fixed_phrases(self):
+        ev = self.payload["events"]
+        self.assertTrue(ev)
+        allowed = {"time", "kind", "from", "to", "title", "coarse", "members"}
+        ids = set(CAST_IDS) | {""}
+        for e in ev:
+            self.assertLessEqual(set(e), allowed)
+            self.assertRegex(e["time"], pw.TS_RE)
+            self.assertIn(e["kind"], {"dispatch", "report", "meeting", "note"})
+            self.assertIn(e["from"], ids)
+            self.assertIn(e["to"], ids)
+            self.assertTrue(e["coarse"])                              # 감시 시작 직후에는 '대략' 사건뿐
+            for mem in e.get("members", []):
+                self.assertIn(mem, ids)
+        titles = {e["title"] for e in ev}
+        self.assertIn("회의 시작: 블로그 슬롯", titles)
+        self.assertIn("클로드 → 뮤즈: 초안·사진 요청", titles)         # 되살린 사건은 지휘자 이름으로만
+        self.assertIn("어사이드 → 클로드: 에디터 입력 기록", titles)
+
+    def test_events_from_transitions(self):
+        raw = fake_raw()
+        prev = pw.event_marks(raw, CFG)
+        self.assertEqual(pw.derive_events(prev, prev, NOW), [])       # 바뀐 게 없으면 사건도 없다
+        raw2 = fake_raw()
+        raw2["subagents"]["fable"] = NOW
+        raw2["blog"]["rows_today"].append({"time": NOW, "account": FAKE_ID_A, "saved": True})
+        raw2["signals"]["aside"]["run_last"] = NOW
+        ev = pw.derive_events(prev, pw.event_marks(raw2, CFG), NOW)
+        got = {(e["title"], e["coarse"]) for e in ev}
+        self.assertEqual(got, {("클로드 → Fable: 개발 작업 배정", False), ("어사이드 → 클로드: 임시저장 1건 완료", False),
+                               ("어사이드 → Opus 보조: 에디터 입력 기록", True)})
+        merged = pw.merge_events(ev, ev, NOW)
+        self.assertEqual(len(merged), len(ev))                         # 같은 사건은 한 번만
+        payload, terms = pw.build_status(raw2, CFG, merged)
+        self.assertEqual(pw.find_leaks(payload, terms), [])
+
+    def test_live_post_refuses_leaky_payload(self):
+        bad = {"updated_at": pw.iso(NOW), "source": "pc", "cast": [{"task": "서버 192.168.10.24 접속"}]}
+        self.assertIs(pw.live_post(bad, [], {"live_url": "http://127.0.0.1:9/none"}, "x" * 8), False)
 
     def test_statuses(self):
         by = {a["id"]: a for a in self.payload["agents"]}
@@ -165,23 +270,23 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(by["reels"]["status"], "idle")
         self.assertEqual(by["clip"]["status"], "offline")
         self.assertEqual(by["insta"]["bubble"], "작업 진행 중")  # 모르는 단계 문자열은 버린다
-        self.assertEqual(by["muse"]["status"], "meeting")       # 최근 10분 안 호출
-        self.assertEqual(by["speech"]["status"], "working")
-        self.assertEqual(by["claude"]["status"], "working")
+        for cid in ("claude", "muse", "speech", "browser"):      # 주인공은 일감 목록에 넣지 않는다
+            self.assertNotIn(cid, by)
 
     def test_muse_idle_when_no_recent_call(self):
         raw = fake_raw()
         raw["apps"]["shorts"]["muse"] = [NOW - timedelta(minutes=45)]
         raw["apps"]["shorts"]["speech"] = []
-        by = {a["id"]: a for a in pw.build_status(raw, CFG)[0]["agents"]}
+        raw["signals"]["muse"] = {"running": False, "last": None, "scr_last": None, "run_last": None}
+        by = {a["id"]: a for a in pw.build_status(raw, CFG)[0]["cast"]}
         self.assertEqual(by["muse"]["status"], "idle")
-        self.assertEqual(by["speech"]["status"], "offline")
+        self.assertEqual(by["speech"]["status"], "idle")
 
     def test_signature_ignores_timestamps(self):
         raw2 = fake_raw()
         raw2["now"] = NOW + timedelta(seconds=30)
         raw2["claude_session"] = NOW
-        p2, _ = pw.build_status(raw2, CFG)
+        p2, _ = pw.build_status(raw2, CFG, self.events)
         self.assertEqual(pw.signature(self.payload), pw.signature(p2))
 
 

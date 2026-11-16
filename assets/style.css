@@ -25,6 +25,9 @@ button{font:inherit;color:inherit;cursor:pointer}
 .legend{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11px;color:var(--muted)}
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .legend i{width:8px;height:8px;border-radius:50%}
+.ticker{margin-top:8px;display:inline-block;max-width:100%;pointer-events:none;background:rgba(11,15,23,.78);border:1px solid var(--line);
+  border-radius:999px;padding:4px 12px;font-size:12px;color:#cfd8ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker.hot{border-color:#e8935f;color:#ffe4d1}
 .zoom{position:absolute;right:14px;top:14px;z-index:3;display:flex;gap:6px}
 .zoom button{min-width:38px;height:38px;border-radius:10px;border:1px solid var(--line);
   background:rgba(17,23,38,.85);font-size:18px;font-weight:700;backdrop-filter:blur(6px)}
@@ -34,19 +37,14 @@ button{font:inherit;color:inherit;cursor:pointer}
   background:rgba(17,23,38,.92);border:1px solid var(--line);border-radius:10px;padding:8px 14px;
   font-size:12px;color:var(--resting);max-width:90%;text-align:center}
 
-.bot{cursor:pointer}
-.bot:hover .bot-ring,.bot:focus .bot-ring{opacity:1}
-.bot:focus{outline:none}
-.bot-ring{opacity:0;transition:opacity .15s}
-.bot.s-working .bot-body{animation:bob 1.1s ease-in-out infinite}
-.bot.s-meeting .bot-body{animation:bob 2.2s ease-in-out infinite}
-.bot.s-working .bot-lamp,.bot.s-meeting .bot-lamp{animation:blink 1.2s ease-in-out infinite}
-.bot.s-offline{opacity:.42}
-.bot-zz{animation:zz 2.4s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5px)}}
+.char{cursor:pointer}
+.char:focus{outline:none}
+.char:hover ellipse:nth-child(2),.char:focus ellipse:nth-child(2){stroke-width:2.6}
+.lamp-on{animation:blink 1.2s ease-in-out infinite}
+.char-zz{animation:zz 2.4s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes zz{0%{opacity:0;transform:translate(0,0)}40%{opacity:1}100%{opacity:0;transform:translate(5px,-9px)}}
-@media (prefers-reduced-motion:reduce){.bot *, .live i{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.lamp-on,.char-zz,.live i{animation:none!important}}
 
 /* ---------- popup ---------- */
 .popup{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -105,6 +103,23 @@ button{font:inherit;color:inherit;cursor:pointer}
 .row .who{min-width:0;flex:1}
 .row .nm{font-weight:600;display:flex;align-items:center;gap:6px}
 .row .sub{color:var(--muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.agent{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--panel2);
+  border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.agent:hover{border-color:var(--accent)}
+.agent .who{min-width:0;flex:1;display:grid;gap:1px}
+.agent .nm{font-weight:700;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.agent .role{font-weight:500;font-size:11px;color:var(--muted)}
+.agent .sub{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.agent .when{font-size:11.5px;color:var(--muted)}
+.avatar.sm{width:34px;height:34px;border-radius:11px}
+.agent.s-working{border-color:rgba(52,211,153,.45)}
+.agent.s-offline{opacity:.6}
+.sec-h{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;margin:14px 0 8px}
+.sec-h:first-child{margin-top:0}
+.sec-h .cnt{margin-left:auto;color:var(--muted);font-weight:500;font-size:11.5px}
+.chip-when{color:var(--muted);font-size:11px;margin-left:2px}
+.empty.sm{padding:10px 0;text-align:left}
+.loglist li{grid-template-columns:50px 1fr}
 .src{font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 4px}
 .empty{color:var(--muted);text-align:center;padding:24px 0;font-size:13px}
 .loglist{list-style:none;margin:8px 0 0;padding:0}
@@ -119,11 +134,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 @media (max-width:860px){
   html,body{height:auto}
   .app{display:block;height:auto}
-  .map-pane{height:62vw;min-height:300px;max-height:64vh}
+  .map-pane{height:70vw;min-height:300px;max-height:64vh}
   .side{border-left:0;border-top:1px solid var(--line)}
   .tabbody{overflow:visible;min-height:220px}
   .map-head{right:140px;left:12px;top:10px}
   .legend{display:none}
+  .ticker{font-size:11px;margin-top:6px;white-space:normal}
   .zoom{right:10px;top:10px}
   .kpis{gap:6px;padding:4px 12px 12px}
   .side-head,.tabbody,.side-foot{padding-left:12px;padding-right:12px}
