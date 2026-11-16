@@ -1,30 +1,30 @@
 {
- "updated_at": "2026-11-16T21:24:29+09:00",
+ "updated_at": "2026-11-16T21:43:50+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 4,
-  "working": 5,
-  "idle": 9
+  "done_today": 5,
+  "working": 2,
+  "idle": 12
  },
  "agents": [
   {
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-16T21:09:40+09:00"
   },
   {
    "id": "blog-b",
    "name": "블로그팀 B",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-16T20:59:45+09:00"
   },
   {
@@ -41,11 +41,11 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "작업 진행 중",
-   "task": "쇼츠 파이프라인 1건 진행 중",
-   "last_active": "2026-11-16T18:23:50+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "쇼츠 파이프라인 1건 완료",
+   "last_active": "2026-11-16T21:36:01+09:00"
   },
   {
    "id": "reels",
@@ -91,11 +91,11 @@
    "id": "muse",
    "name": "Muse",
    "role": "대본·음성 외부 AI",
-   "status": "meeting",
-   "zone": "meeting",
-   "bubble": "대본·음성 요청 처리 중",
-   "task": "외부 AI 요청 처리 중",
-   "last_active": "2026-11-16T21:23:11+09:00"
+   "status": "idle",
+   "zone": "lounge",
+   "bubble": "호출 대기",
+   "task": "오늘 호출 기록 있음 · 대기",
+   "last_active": "2026-11-16T21:27:36+09:00"
   },
   {
    "id": "speech",
@@ -113,18 +113,18 @@
    "role": "파이프라인 총괄",
    "status": "working",
    "zone": "desk",
-   "bubble": "블로그 슬롯 지휘 중",
+   "bubble": "파이프라인 지휘 중",
    "task": "전체 파이프라인 진행 관리 중",
-   "last_active": "2026-11-16T21:24:31+09:00"
+   "last_active": "2026-11-16T21:42:16+09:00"
   },
   {
    "id": "browser",
    "name": "브라우저 창구",
    "role": "웹 작업 지원",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "웹 작업 지원 중",
-   "task": "웹 화면 작업 지원 중",
+   "bubble": "요청 대기",
+   "task": "대기",
    "last_active": ""
   },
   {
@@ -141,11 +141,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-16T21:12:36+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-16T21:41:45+09:00"
   },
   {
    "id": "insight",
@@ -159,6 +159,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-16T21:36:01+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
+  {
+   "time": "2026-11-16T21:27:36+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-16T21:23:11+09:00",
    "agent": "muse",
