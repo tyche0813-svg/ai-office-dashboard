@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-16T21:43:50+09:00",
+ "updated_at": "2026-11-16T21:46:01+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "agents": [
   {
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-16T21:09:40+09:00"
   },
   {
@@ -115,7 +115,7 @@
    "zone": "desk",
    "bubble": "파이프라인 지휘 중",
    "task": "전체 파이프라인 진행 관리 중",
-   "last_active": "2026-11-16T21:42:16+09:00"
+   "last_active": "2026-11-16T21:44:40+09:00"
   },
   {
    "id": "browser",
@@ -141,10 +141,10 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
    "last_active": "2026-11-16T21:41:45+09:00"
   },
   {
