@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-16T21:46:01+09:00",
+ "updated_at": "2026-11-16T21:57:59+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
@@ -41,10 +41,10 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "쇼츠 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-16T21:36:01+09:00"
   },
   {
@@ -115,7 +115,7 @@
    "zone": "desk",
    "bubble": "파이프라인 지휘 중",
    "task": "전체 파이프라인 진행 관리 중",
-   "last_active": "2026-11-16T21:44:40+09:00"
+   "last_active": "2026-11-16T21:53:10+09:00"
   },
   {
    "id": "browser",
