@@ -751,13 +751,19 @@
     draw();
   }
 
+  /* 화면 갱신: 보통은 requestAnimationFrame, 프레임이 드문 환경(절전·일부 웹뷰)에서는 타이머가 대신 민다.
+     지난 시간만큼 잘게 나눠 진행하므로 프레임이 띄엄띄엄 와도 걷는 속도는 같다. */
   var lastTs = 0;
-  function frame(ts) {
-    var dt = lastTs ? Math.min(0.1, (ts - lastTs) / 1000) : 0;
+  function tick() {
+    var ts = performance.now();
+    var el = lastTs ? Math.min(2, (ts - lastTs) / 1000) : 0;
     lastTs = ts;
-    if (dt > 0 && state.cast.length) { step(dt); draw(); }
-    requestAnimationFrame(frame);
+    if (el <= 0 || !state.cast.length) return;
+    while (el > 0.0001) { var dt = Math.min(0.05, el); step(dt); el -= dt; }
+    draw();
   }
+  function frame() { tick(); requestAnimationFrame(frame); }
+  setInterval(function () { if (!document.hidden && performance.now() - lastTs > 220) tick(); }, 250);
 
   /* ---------- zoom / pan ---------- */
   var drag = { on: false, moved: false, sx: 0, sy: 0, ox: 0, oy: 0 };
