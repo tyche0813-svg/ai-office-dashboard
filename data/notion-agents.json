@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-16T23:32:13+09:00",
+ "updated_at": "2026-11-16T23:34:23+09:00",
  "source": "notion",
  "summary": {
   "done_today": 0
@@ -18,9 +18,9 @@
    "id": "instinct",
    "name": "Instinct",
    "role": "일정 · 자료 조사 · 콘텐츠",
-   "status": "offline",
-   "bubble": "",
-   "task": "연결 안 됨 · 연락판 연결 전",
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "노션 연락판 대기",
    "last_active": ""
   },
   {
