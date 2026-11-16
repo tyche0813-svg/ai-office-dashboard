@@ -150,11 +150,14 @@
   /* ---------- data ---------- */
   function fetchJson(url) {
     return fetch(url + (url.indexOf('?') < 0 ? '?t=' : '&t=') + Date.now(), { cache: 'no-store' })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
-      .then(function (t) {
-        var j = JSON.parse(t);
-        if (!j || typeof j !== 'object' || Array.isArray(j)) throw new Error('형식 오류');
-        return { ok: true, data: j, text: t, updated: parseTime(j.updated_at) };
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        var cached = r.headers.get('x-aio-offline') === '1';
+        return r.text().then(function (t) {
+          var j = JSON.parse(t);
+          if (!j || typeof j !== 'object' || Array.isArray(j)) throw new Error('형식 오류');
+          return { ok: true, data: j, text: t, updated: parseTime(j.updated_at), cached: cached };
+        });
       })
       .catch(function () { return { ok: false }; });
   }
@@ -268,6 +271,9 @@
     });
     logs.sort(function (a, b) { return (b.t ? b.t.getTime() : 0) - (a.t ? a.t.getTime() : 0); });
     events.sort(function (a, b) { return b.t.getTime() - a.t.getTime(); });
+    /* vooy: 활동 신호를 아직 모른다 -> '대기'가 아니라 '연결 안 됨'(회색)으로 보여 준다 */
+    var v = cast.vooy;
+    if (!v.known || /미설정/.test(v.task)) { v.status = 'offline'; v.bubble = ''; v.task = '연결 안 됨 · 활동 신호 미확인'; }
     state.cast = CAST.map(function (c) { return cast[c.id]; });
     state.stations = stations; state.logs = logs; state.events = events; state.summary = { done: done };
   }
@@ -752,9 +758,12 @@
     var v = state.view;
     $('world').setAttribute('transform', 'translate(' + v.x.toFixed(1) + ',' + v.y.toFixed(1) + ') scale(' + v.k.toFixed(3) + ')');
     $('map').classList.toggle('zoomed', v.k > 1.01);
+    fitUi();
   }
+  var viewTouched = false;
   function zoomBy(f) {
-    var v = state.view, cx = 60, cy = 170;
+    viewTouched = true;
+    var v = state.view, cx = 65, cy = 145;
     var nk = Math.max(0.7, Math.min(3.5, v.k * f));
     v.x = cx - (cx - v.x) * (nk / v.k);
     v.y = cy - (cy - v.y) * (nk / v.k);
@@ -766,12 +775,18 @@
     if (!r.width || !r.height) return 1;
     return Math.max(VB_W / r.width, VB_H / r.height);
   }
-  function fitUi() { state.ui = clamp(svgScale() * 0.75, 1.1, 1.35); }
+  function fitUi() { state.ui = clamp(svgScale() / state.view.k * 0.75, 1.0, 1.35); }
+  function defaultView() {
+    var r = $('map').getBoundingClientRect();
+    var k = r.width && r.width < 620 && r.height > r.width * 0.7 ? clamp(640 / r.width, 1, 1.75) : 1;
+    /* 책상이 모인 곳(지도 좌표 25, 235)을 화면 가운데로 */
+    return k > 1.01 ? { k: k, x: 65 - 25 * k, y: 145 - 235 * k } : { k: 1, x: 0, y: 0 };
+  }
   function initMapControls() {
     var map = $('map');
     $('zoomIn').addEventListener('click', function () { zoomBy(1.25); });
     $('zoomOut').addEventListener('click', function () { zoomBy(0.8); });
-    $('zoomFit').addEventListener('click', function () { state.view = { k: 1, x: 0, y: 0 }; applyView(); });
+    $('zoomFit').addEventListener('click', function () { viewTouched = true; state.view = { k: 1, x: 0, y: 0 }; applyView(); });
     map.addEventListener('wheel', function (ev) { ev.preventDefault(); zoomBy(ev.deltaY < 0 ? 1.12 : 0.89); }, { passive: false });
     map.addEventListener('pointerdown', function (ev) {
       drag.on = true; drag.moved = false; drag.sx = ev.clientX; drag.sy = ev.clientY; drag.ox = state.view.x; drag.oy = state.view.y;
@@ -801,7 +816,7 @@
       var dx = ev.clientX - drag.sx, dy = ev.clientY - drag.sy;
       if (!drag.moved && Math.abs(dx) + Math.abs(dy) < 6) return;
       if (ev.pointerType === 'touch' && state.view.k <= 1.01) return;
-      drag.moved = true;
+      drag.moved = true; viewTouched = true;
       map.classList.add('dragging');
       var sc = svgScale();
       state.view.x = drag.ox + dx * sc; state.view.y = drag.oy + dy * sc;
@@ -814,7 +829,8 @@
     window.addEventListener('pointerup', end);
     window.addEventListener('pointercancel', end);
     map.addEventListener('click', function () { if (!drag.moved) closePopup(); });
-    window.addEventListener('resize', fitUi);
+    window.addEventListener('resize', function () { if (!viewTouched) state.view = defaultView(); applyView(); });
+    state.view = defaultView();
     fitUi();
   }
 
@@ -869,7 +885,7 @@
     var ul = $('popLogs'); ul.textContent = '';
     if (kind === 'cast') {
       rows = [['자리', whereOf(a)], ['현재 작업', a.task || '없음'], ['한마디', a.bubble || '–'], ['마지막 활동', lastText(a.last)]];
-      if (a.id === 'vooy' && /미설정/.test(a.task)) rows.push(['안내', '활동 신호가 아직 연결되지 않아 대기로 표시합니다']);
+      if (a.id === 'vooy' && /연결 안 됨/.test(a.task)) rows.push(['안내', '활동 신호가 아직 연결되지 않았습니다. 신호를 알게 되면 그때부터 움직입니다']);
       a.sub.slice(0, 4).forEach(function (x) { rows.push([x.name, STATUS[x.status].label + (x.task ? ' · ' + x.task : '')]); });
       var evs = state.events.filter(function (e) { return e.from === a.id || e.to === a.id || e.members.indexOf(a.id) >= 0; }).slice(0, 8);
       $('popSub').textContent = '이 AI 가 관련된 실제 지시·호출';
@@ -986,6 +1002,8 @@
     body.scrollTop = keep;
   }
 
+  /* 오프라인: 기기가 끊겼거나, 실시간 채널이 안 되고 상태 파일도 저장본으로만 열렸을 때 */
+  function isOffline() { return navigator.onLine === false || (state.mode !== 'live' && state.mode !== 'demo' && !!(state.pc.cached || state.pickle.cached)); }
   function renderFoot() {
     var foot = $('footStatus'); foot.textContent = '';
     var modeText = { live: '실시간 채널', file: '백업 파일', demo: '데모', none: '연결 안 됨' }[state.mode];
@@ -1001,7 +1019,9 @@
     });
     var live = state.mode === 'live' && state.pc.ok && !state.pc.stale;
     $('liveDot').classList.toggle('warn', !live && state.mode !== 'demo');
-    $('liveText').textContent = state.mode === 'demo' ? 'DEMO' : (live ? 'LIVE' : (state.mode === 'file' ? '백업' : '끊김'));
+    var off = isOffline();
+    $('liveText').textContent = state.mode === 'demo' ? 'DEMO' : (off ? '오프라인' : (live ? 'LIVE' : (state.mode === 'file' ? '백업' : '끊김')));
+    if (off && state.mode !== 'demo') $('liveDot').classList.add('warn');
   }
   function renderSide() {
     var C = state.cast, S = state.stations;
@@ -1012,6 +1032,7 @@
     renderFoot();
     var msg = $('mapMsg');
     if (state.demo) { msg.hidden = false; msg.textContent = '데모 화면입니다(실제 상태 아님)'; }
+    else if (isOffline()) { msg.hidden = false; msg.textContent = '오프라인입니다 · 마지막으로 받은 상태를 보여 주고, 연결되면 자동으로 이어집니다'; }
     else if (!state.pc.ok && !state.pickle.ok) { msg.hidden = false; msg.textContent = '상태를 불러오지 못했습니다. AI 들은 대기 모습으로 두고, 잠시 뒤 다시 시도합니다.'; }
     else msg.hidden = true;
     renderTicker();
@@ -1046,11 +1067,43 @@
     setInterval(function () { if (state.cast.length) { normalize(); ensureChars(); renderSide(); } }, 20000);
   }
 
+  function initApp() {
+    var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true || qs.get('standalone') === '1';
+    document.documentElement.classList.toggle('standalone', standalone);
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+      navigator.serviceWorker.ready.then(function () { document.documentElement.setAttribute('data-sw', '1'); }, function () {});
+    }
+    var btn = $('installBtn'), deferred = null;
+    window.addEventListener('beforeinstallprompt', function (ev) {      /* 설치할 수 있을 때만 버튼을 보인다 */
+      ev.preventDefault(); deferred = ev; btn.hidden = false;
+    });
+    btn.addEventListener('click', function () {
+      if (!deferred) return;
+      deferred.prompt();
+      var done = function () { deferred = null; btn.hidden = true; };
+      if (deferred.userChoice && deferred.userChoice.then) deferred.userChoice.then(done, done); else done();
+    });
+    window.addEventListener('appinstalled', function () { deferred = null; btn.hidden = true; });
+    /* iOS 사파리는 설치 버튼이 없다: 한 번만 안내 */
+    var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var hint = $('iosHint'), seen = false;
+    try { seen = localStorage.getItem('aio-ios-hint') === '1'; } catch (e) {}
+    if (ios && !standalone && !seen) hint.hidden = false;
+    $('iosHintClose').addEventListener('click', function () {
+      hint.hidden = true;
+      try { localStorage.setItem('aio-ios-hint', '1'); } catch (e) {}
+    });
+    window.addEventListener('online', function () { poll(); });
+    window.addEventListener('offline', function () { renderSide(); });
+  }
+
   /* 미리보기용: ?demo=1(가짜 상태·사건) · ?tab=agents · ?open=claude · ?ff=12(12초 뒤 모습으로 건너뛰기) */
   var qs = new URLSearchParams(location.search);
   state.demo = qs.get('demo') === '1';
   initSide();
   initMapControls();
+  initApp();
   normalize();          /* 데이터가 오기 전에도 모두 자리에서 대기하는 모습으로 보인다 */
   renderAll();
   if (/^(tower|agents|tasks|logs)$/.test(qs.get('tab') || '')) {

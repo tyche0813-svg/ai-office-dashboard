@@ -5,8 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0f17">
-<title>AI 오피스 관제탑</title>
-<link rel="stylesheet" href="assets/style.css?v=1116d">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI 오피스">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="assets/app/favicon.png">
+<link rel="apple-touch-icon" href="assets/app/apple-touch-icon.png">
+<title>AI 오피스</title>
+<link rel="stylesheet" href="assets/style.css?v=1116e">
 </head>
 <body>
 <div class="app">
@@ -17,6 +24,7 @@
       <div class="ticker" id="ticker" aria-live="polite"></div>
     </div>
     <div class="zoom" role="group" aria-label="확대 축소">
+      <button type="button" id="installBtn" class="wide install" hidden>앱 설치</button>
       <button type="button" id="zoomIn" aria-label="확대">+</button>
       <button type="button" id="zoomOut" aria-label="축소">−</button>
       <button type="button" id="zoomFit" class="wide">전체</button>
@@ -25,6 +33,10 @@
       <g id="world"><g id="floor"></g><g id="sorted"></g><g id="signs"></g><g id="overlay"></g></g>
     </svg>
     <div class="map-msg" id="mapMsg" hidden></div>
+    <div class="ios-hint" id="iosHint" hidden>
+      <span>앱으로 쓰려면 Safari 아래 <b>공유</b> 버튼 → <b>홈 화면에 추가</b>를 누르세요.</span>
+      <button type="button" id="iosHintClose" aria-label="안내 닫기">×</button>
+    </div>
     <div class="popup" id="popup" hidden role="dialog" aria-modal="false" aria-labelledby="popName">
       <button type="button" class="popup-close" id="popClose" aria-label="닫기">×</button>
       <div class="popup-head">
@@ -66,6 +78,6 @@
     </footer>
   </aside>
 </div>
-<script src="assets/app.js?v=1116d"></script>
+<script src="assets/app.js?v=1116e"></script>
 </body>
 </html>
