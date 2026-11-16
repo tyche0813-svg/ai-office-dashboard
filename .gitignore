@@ -1,0 +1,8 @@
+# 비공개(스캔 보고서·로컬 설정·감시 로그·스크린샷) — 절대 올리지 않는다
+local/
+*.local.json
+*.tmp
+__pycache__/
+*.pyc
+.env
+.env.*

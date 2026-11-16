@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0f17">
+<title>AI 오피스 관제</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+  <main class="map-pane" id="mapPane">
+    <div class="map-head">
+      <div class="brand"><span class="brand-mark"></span>AI OFFICE <small>실시간 관제</small></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="zoom" role="group" aria-label="확대 축소">
+      <button type="button" id="zoomIn" aria-label="확대">+</button>
+      <button type="button" id="zoomOut" aria-label="축소">−</button>
+      <button type="button" id="zoomFit" class="wide">전체</button>
+    </div>
+    <svg id="map" class="map" xmlns="http://www.w3.org/2000/svg" viewBox="-400 -120 920 580" preserveAspectRatio="xMidYMid meet" aria-label="2.5D 사무실 지도">
+      <g id="world"></g>
+    </svg>
+    <div class="map-msg" id="mapMsg" hidden></div>
+    <div class="popup" id="popup" hidden role="dialog" aria-modal="false" aria-labelledby="popName">
+      <button type="button" class="popup-close" id="popClose" aria-label="닫기">×</button>
+      <div class="popup-head">
+        <span class="avatar" id="popAvatar"></span>
+        <div>
+          <div class="popup-name" id="popName"></div>
+          <div class="popup-role" id="popRole"></div>
+        </div>
+        <span class="badge" id="popBadge"></span>
+      </div>
+      <dl class="popup-meta" id="popMeta"></dl>
+      <div class="popup-sub">작업 로그</div>
+      <ul class="loglist" id="popLogs"></ul>
+    </div>
+  </main>
+
+  <aside class="side">
+    <header class="side-head">
+      <span class="live" id="liveDot"><i></i>LIVE</span>
+      <span class="side-title">운영 현황</span>
+      <span class="clock" id="clock"></span>
+    </header>
+    <section class="kpis">
+      <div class="kpi"><b id="kDone">–</b><span>오늘 처리</span></div>
+      <div class="kpi"><b id="kWork">–</b><span>진행 중</span></div>
+      <div class="kpi"><b id="kIdle">–</b><span>대기</span></div>
+      <div class="kpi"><b id="kAll">–</b><span>전체 AI</span></div>
+    </section>
+    <nav class="tabs" role="tablist">
+      <button type="button" role="tab" data-tab="office" class="on">오피스</button>
+      <button type="button" role="tab" data-tab="tasks">AI 업무</button>
+      <button type="button" role="tab" data-tab="staff">직원 현황</button>
+      <button type="button" role="tab" data-tab="logs">활동 로그</button>
+    </nav>
+    <section class="tabbody" id="tabBody"></section>
+    <footer class="side-foot">
+      <div class="foot-title">status 갱신 시각</div>
+      <div id="footStatus" class="foot-rows"></div>
+    </footer>
+  </aside>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
