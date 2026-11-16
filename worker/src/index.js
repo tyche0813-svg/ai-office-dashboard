@@ -75,7 +75,7 @@ export default {
     if (request.method === 'GET') return stub.fetch('https://do/status');
     if (request.method !== 'POST') return json({ error: 'method' }, 405);
     const auth = request.headers.get('authorization') || '';
-    if (!sameToken(auth.replace(/^Bearer\s+/i, ''), env.PUSH_TOKEN || '')) return json({ error: 'unauthorized' }, 401);
+    if (!sameToken(auth.replace(/^Bearer\s+/i, ''), (env.PUSH_TOKEN || '').trim())) return json({ error: 'unauthorized' }, 401);
     const body = await request.text();
     if (body.length > MAX_BYTES) return json({ error: 'too large' }, 413);
     let data;
