@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-17T13:04:24+09:00",
+ "updated_at": "2026-11-17T15:04:29+09:00",
  "source": "notion",
  "summary": {
-  "done_today": 5
+  "done_today": 7
  },
  "cast": [
   {
    "id": "pickle",
    "name": "피클",
    "role": "클라우드 비서",
-   "status": "working",
-   "bubble": "작업 보고 중",
-   "task": "노션 연락판에 작업 결과 보고",
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "노션 연락판 대기",
    "last_active": "2026-11-17T13:04:24+09:00"
   },
   {
    "id": "instinct",
    "name": "Instinct",
    "role": "일정 · 자료 조사 · 콘텐츠",
-   "status": "idle",
-   "bubble": "요청 대기",
-   "task": "노션 연락판 대기",
-   "last_active": "2026-11-17T00:24:26+09:00"
+   "status": "working",
+   "bubble": "작업 보고 중",
+   "task": "노션 연락판에 작업 결과 보고",
+   "last_active": "2026-11-17T15:04:29+09:00"
   },
   {
    "id": "pally",
@@ -34,6 +34,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-17T15:04:29+09:00",
+   "kind": "report",
+   "from": "instinct",
+   "to": "claude",
+   "title": "Instinct → 클로드: 연락판 보고",
+   "coarse": true
+  },
   {
    "time": "2026-11-17T13:04:24+09:00",
    "kind": "report",
