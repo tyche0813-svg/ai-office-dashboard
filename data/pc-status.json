@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-19T23:16:04+09:00",
+ "updated_at": "2026-11-19T23:20:30+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
-  "working": 3,
-  "idle": 11
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-19T23:15:09+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -23,7 +23,7 @@
    "status": "working",
    "bubble": "초안·사진 작업 중",
    "task": "블로그 초안·사진 요청 처리 중",
-   "last_active": "2026-11-19T23:15:37+09:00"
+   "last_active": "2026-11-19T23:16:52+09:00"
   },
   {
    "id": "aside",
@@ -113,7 +113,7 @@
    "status": "working",
    "bubble": "앱·화면 개발 중",
    "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-19T23:16:05+09:00"
+   "last_active": "2026-11-19T23:18:16+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,46 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-19T23:20:30+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-19T23:20:07+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-19T23:16:52+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-19T23:16:52+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-19T23:16:52+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
   {
    "time": "2026-11-19T23:15:41+09:00",
    "kind": "dispatch",
