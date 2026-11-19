@@ -1,15 +1,15 @@
 {
   "name": "AI 오피스",
   "short_name": "AI 오피스",
-  "description": "클로드의 지휘 아래 일하는 AI 들을 보는 실시간 관제탑",
+  "description": "클로드의 지휘 아래 일하는 AI 직원들을 보는 AI 사무실 현황",
   "lang": "ko",
   "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#0b0f17",
-  "theme_color": "#0b0f17",
+  "background_color": "#17120e",
+  "theme_color": "#17120e",
   "icons": [
     { "src": "assets/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
     { "src": "assets/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
