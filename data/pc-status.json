@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-19T23:45:31+09:00",
+ "updated_at": "2026-11-19T23:55:03+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
@@ -110,10 +110,10 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-19T23:41:19+09:00"
+   "status": "working",
+   "bubble": "앱·화면 개발 중",
+   "task": "앱 개발 작업 진행 중",
+   "last_active": "2026-11-19T23:54:53+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-19T23:54:41+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-19T23:49:32+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "fable",
+   "title": "클로드 → Fable: 개발 작업 배정",
+   "coarse": false
+  },
   {
    "time": "2026-11-19T23:45:31+09:00",
    "kind": "report",
@@ -364,28 +380,6 @@
    "to": "muse",
    "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-19T18:18:55+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-19T06:47:31+09:00",
-   "kind": "meeting",
-   "from": "claude",
-   "to": "",
-   "title": "회의 시작: 블로그 슬롯",
-   "coarse": true,
-   "members": [
-    "claude",
-    "opus",
-    "aside",
-    "muse"
-   ]
   }
  ],
  "agents": [
