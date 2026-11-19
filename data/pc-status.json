@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19T23:20:30+09:00",
+ "updated_at": "2026-11-19T23:32:29+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
@@ -11,18 +11,18 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-19T23:15:09+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-19T23:32:30+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-19T23:16:52+09:00"
   },
   {
@@ -113,7 +113,7 @@
    "status": "working",
    "bubble": "앱·화면 개발 중",
    "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-19T23:18:16+09:00"
+   "last_active": "2026-11-19T23:32:27+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-19T23:32:29+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-19T23:20:30+09:00",
    "kind": "note",
@@ -393,10 +401,10 @@
    "id": "reels",
    "name": "릴스 작업자",
    "role": "릴스 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "릴스 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-19T23:11:45+09:00"
   },
   {
@@ -447,7 +455,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-19T22:56:58+09:00"
+   "last_active": "2026-11-19T23:27:25+09:00"
   },
   {
    "id": "insight",
