@@ -1,6 +1,8 @@
-/* AI 오피스(AI 사무실 현황) — 외부 라이브러리 없음. 배경은 그림 한 장(assets/office-bg.jpg), 캐릭터·이름표·말풍선은 그 위의 SVG.
+/* AI 오피스(AI 사무실 현황) — 데이터·오른쪽 패널·2D 대체 화면. 3D 사무실은 assets/office3d.js(Three.js)가 그린다.
+   WebGL 이 없거나 3D 를 불러오지 못하면 아래의 2D 그림 버전(배경 assets/office-bg.jpg + SVG 캐릭터)으로 자동 대체한다.
    데이터는 모두 textContent 로만 넣는다.
-   원칙: 꾸며낸 연출 없음. 캐릭터가 걷거나 모이거나 말하는 것은 전부 감시 스크립트가 '실제로 감지한 사건'과 '현재 상태'에서만 나온다.
+   원칙: 무엇을 하는지(근무·휴식·퇴근·지시·보고·회의)와 말풍선 문구는 감시 스크립트가 '실제로 감지한 사건'과 '현재 상태'에서만 나온다.
+   3D 화면에서는 대기(idle) 캐릭터만 가끔 걷거나 커피를 마시는 연출이 있고, 그 연출에는 말풍선이 없다(2D 대체 화면에는 연출 없음).
    - 상태 working  → 자기 책상에서 작업(타이핑 + 작업 말풍선)
    - 상태 resting  → 방금 일을 마침: 소파·탕비실에서 쉼
    - 상태 idle     → 자기 책상에서 조용히 대기      - 상태 offline → 책상에서 꺼진 모습
@@ -91,6 +93,7 @@
   var state = { cast: [], stations: [], logs: [], events: [], pc: { ok: false }, pickle: { ok: false }, mode: 'none',
     summary: { done: 0 }, tab: 'tower', view: { k: 1, x: 0, y: 0 }, popup: null, demo: false, ui: 1, placed: false, now: null };
   var chars = {};
+  var V3 = null;                        /* 3D 화면(있으면 지도·캐릭터는 여기서 그린다) */
   var sortItems = [], sortSig = '';
   var simT = 0;
   var seenEv = {}, evQueue = [], firstIntake = true;
@@ -301,7 +304,7 @@
       if (seenEv[e.key]) return;
       seenEv[e.key] = true;
       var age = Date.now() - e.t.getTime();
-      if (age <= limit && age > -120000) evQueue.push({ e: e, at: simT });
+      if (age <= limit && age > -120000) { if (V3) V3.pushEvent(e); else evQueue.push({ e: e, at: simT }); }
     });
     firstIntake = false;
   }
@@ -314,7 +317,7 @@
     normalize();
     renderAll();
     if (state.pc.ok || state.pickle.ok) {
-      if (!state.placed) { placeAll(); state.placed = true; }
+      if (!state.placed) { if (V3) V3.placeAll(); else placeAll(); state.placed = true; }
       intakeEvents();
     }
   }
@@ -606,7 +609,7 @@
   var chipSig = '';
   function renderChips() {
     var n = { working: 0, meeting: 0, resting: 0, idle: 0, offline: 0 };
-    state.cast.forEach(function (d) { var c = chars[d.id]; if (c && c.act && c.act.type === 'meet') n.meeting++; else n[d.status]++; });
+    state.cast.forEach(function (d) { var c = chars[d.id]; if (V3 ? V3.inMeeting(d.id) : (c && c.act && c.act.type === 'meet')) n.meeting++; else n[d.status]++; });
     var sig = JSON.stringify(n);
     if (sig === chipSig) return;
     chipSig = sig;
@@ -689,6 +692,7 @@
   }
 
   function renderMap() {
+    if (V3) { V3.sync(state.cast); renderChips(); return; }
     if (!sceneBuilt) buildScene();
     ensureChars();
     for (var id in chars) if (chars[id].over.parentNode !== $('overlay')) $('overlay').appendChild(chars[id].over);
@@ -703,7 +707,7 @@
     var ts = performance.now();
     var el = lastTs ? Math.min(2, (ts - lastTs) / 1000) : 0;
     lastTs = ts;
-    if (el <= 0 || !state.cast.length) return;
+    if (V3 || el <= 0 || !state.cast.length) return;
     while (el > 0.0001) { var dt = Math.min(0.05, el); step(dt); el -= dt; }
     draw();
   }
@@ -746,6 +750,13 @@
   }
   function initMapControls() {
     var map = $('map');
+    if (V3) {
+      $('zoomIn').addEventListener('click', function () { V3.zoom(1.25); });
+      $('zoomOut').addEventListener('click', function () { V3.zoom(0.8); });
+      $('zoomFit').addEventListener('click', function () { V3.reset(); });
+      setInterval(renderChips, 500);
+      return;
+    }
     $('zoomIn').addEventListener('click', function () { zoomBy(1.25); });
     $('zoomOut').addEventListener('click', function () { zoomBy(0.8); });
     $('zoomFit').addEventListener('click', function () { viewTouched = true; state.view = { k: 1, x: 0, y: 0 }; applyView(); });
@@ -1061,7 +1072,7 @@
     function tick() { var d = new Date(); $('clock').textContent = fmtMDHM(d) + ':' + p2(d.getSeconds()); }
     tick(); setInterval(tick, 1000);
     /* '몇 분 전' 을 계속 새로 */
-    setInterval(function () { if (state.cast.length) { normalize(); ensureChars(); renderSide(); } }, 20000);
+    setInterval(function () { if (state.cast.length) { normalize(); if (V3) V3.sync(state.cast); else ensureChars(); renderSide(); } }, 20000);
   }
 
   function initApp() {
@@ -1095,26 +1106,69 @@
     window.addEventListener('offline', function () { renderSide(); });
   }
 
-  /* 미리보기용: ?demo=1(가짜 상태·사건) · ?tab=agents · ?open=claude · ?ff=12(12초 뒤 모습으로 건너뛰기) */
+  /* 미리보기용: ?demo=1(가짜 상태·사건) · ?tab=agents · ?open=claude · ?ff=12(12초 뒤 모습으로 건너뛰기) · ?2d=1(2D 대체 화면) · ?3d=1(느린 그래픽 장치에서도 3D) */
   var qs = new URLSearchParams(location.search);
   state.demo = qs.get('demo') === '1';
-  initSide();
-  initMapControls();
-  initApp();
-  normalize();          /* 데이터가 오기 전에도 모두 자리에서 대기하는 모습으로 보인다 */
-  renderAll();
-  if (/^(tower|agents|tasks|logs)$/.test(qs.get('tab') || '')) {
-    var tb = document.querySelector('.tabs button[data-tab="' + qs.get('tab') + '"]');
-    if (tb) tb.click();
+
+  function start() {
+    initSide();
+    initMapControls();
+    initApp();
+    normalize();          /* 데이터가 오기 전에도 모두 자리에서 대기하는 모습으로 보인다 */
+    renderAll();
+    if (/^(tower|agents|tasks|logs)$/.test(qs.get('tab') || '')) {
+      var tb = document.querySelector('.tabs button[data-tab="' + qs.get('tab') + '"]');
+      if (tb) tb.click();
+    }
+    poll().then(function () {
+      var ff = Math.min(600, Number(qs.get('ff')) || 0);
+      if (V3) { if (ff) V3.fastForward(ff); if (Number(qs.get('zoom')) > 0) V3.zoom(Number(qs.get('zoom'))); }
+      else { for (var t = 0; t < ff; t += 0.05) step(0.05); draw(); }
+      if (qs.get('open')) openPopup('cast', qs.get('open'));
+      document.documentElement.setAttribute('data-ready', '1');
+    });
+    if (!V3) requestAnimationFrame(frame);
+    setInterval(function () { if (!document.hidden) poll(); }, state.demo ? FILE_MS : LIVE_MS);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) { lastTs = 0; poll(); } });
   }
-  poll().then(function () {
-    var ff = Math.min(600, Number(qs.get('ff')) || 0);
-    for (var t = 0; t < ff; t += 0.05) step(0.05);
-    draw();
-    if (qs.get('open')) openPopup('cast', qs.get('open'));
-    document.documentElement.setAttribute('data-ready', '1');
-  });
-  requestAnimationFrame(frame);
-  setInterval(function () { if (!document.hidden) poll(); }, state.demo ? FILE_MS : LIVE_MS);
-  document.addEventListener('visibilitychange', function () { if (!document.hidden) { lastTs = 0; poll(); } });
+
+  /* 3D 를 쓸 수 있는지: WebGL(소프트웨어 렌더러 제외) + import map. 안 되면 2D 그림 버전으로 연다. */
+  function canWebgl() {
+    try {
+      var c = document.createElement('canvas'), o = { failIfMajorPerformanceCaveat: qs.get('3d') !== '1' };
+      var gl = window.WebGLRenderingContext && (c.getContext('webgl2', o) || c.getContext('webgl', o));
+      if (!gl) return false;
+      var ext = gl.getExtension('WEBGL_debug_renderer_info'), name = ext ? String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)) : '';
+      var lose = gl.getExtension('WEBGL_lose_context'); if (lose) lose.loseContext();
+      return qs.get('3d') === '1' || !/swiftshader|llvmpipe|software|basic render/i.test(name);
+    } catch (e) { return false; }
+  }
+  var started = false;
+  function boot(use3d) {
+    if (started) return;
+    started = true;
+    if (use3d && window.Office3D) {
+      try {
+        var colors = {};
+        STATUS_ORDER.forEach(function (k) { colors[k] = STATUS[k].color; });
+        V3 = window.Office3D.create({ pane: $('mapPane'), cast: CAST, ceo: CEO_DEF, statusColors: colors, iconDir: ICON_DIR, demo: state.demo,
+          onOpen: function (id) { openPopup('cast', id); }, onClose: closePopup, onTicker: setTicker });
+        window.__aio3d = V3;
+      } catch (e) {
+        V3 = null;
+        window.__aio3dError = String(e && e.stack || e);
+        Array.prototype.forEach.call(document.querySelectorAll('.stage3d,.labels3d'), function (n) { n.parentNode.removeChild(n); });
+      }
+    }
+    document.documentElement.classList.add(V3 ? 'mode-3d' : 'mode-2d');
+    start();
+  }
+  var want3d = qs.get('2d') !== '1' && !!(window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports('importmap')) && canWebgl();
+  if (!want3d) boot(false);
+  else if (window.Office3D) boot(true);
+  else {
+    window.addEventListener('office3d-ready', function () { boot(true); });
+    window.addEventListener('office3d-fail', function () { boot(false); });
+    setTimeout(function () { boot(false); }, 9000);
+  }
 })();
