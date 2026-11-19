@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T06:06:18+09:00",
+ "updated_at": "2026-11-20T06:36:28+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
@@ -11,7 +11,7 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-20T06:01:09+09:00",
+   "last_active": "2026-11-20T06:14:43+09:00",
    "status": "idle",
    "bubble": "지시 대기",
    "task": "대기 · 다음 지시 확인 중"
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T06:19:58+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T06:14:57+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T06:06:18+09:00",
    "kind": "note",
@@ -358,22 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T00:16:46+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T00:11:44+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T06:03:06+09:00"
+   "last_active": "2026-11-20T06:33:28+09:00"
   },
   {
    "id": "insight",
