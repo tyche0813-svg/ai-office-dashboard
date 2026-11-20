@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-21T00:49:38+09:00",
+ "updated_at": "2026-11-21T01:01:11+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 0,
-  "idle": 14
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-21T00:44:21+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-21T01:01:09+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-21T00:39:34+09:00"
   },
@@ -110,8 +110,8 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-21T00:40:57+09:00"
   },
@@ -119,9 +119,9 @@
    "id": "routine",
    "name": "클라우드 루틴",
    "role": "새벽 키워드 수집",
-   "status": "idle",
-   "bubble": "다음 새벽 대기",
-   "task": "다음 새벽 실행 대기",
+   "status": "working",
+   "bubble": "새벽 키워드 수집 중",
+   "task": "예정 시간대 기준 표시 · 키워드 수집",
    "last_active": ""
   },
   {
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-21T01:01:11+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T01:00:06+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "routine",
+   "title": "클라우드 루틴: 새벽 키워드 실행 시간",
+   "coarse": false
+  },
   {
    "time": "2026-11-21T00:49:38+09:00",
    "kind": "note",
@@ -323,10 +339,10 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "쇼츠 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-21T00:39:37+09:00"
   },
   {
