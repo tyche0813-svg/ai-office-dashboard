@@ -1,28 +1,28 @@
 {
- "updated_at": "2026-11-21T00:44:11+09:00",
+ "updated_at": "2026-11-21T00:49:38+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 3,
-  "idle": 11
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-21T00:41:18+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "last_active": "2026-11-21T00:44:21+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-21T00:39:34+09:00"
   },
   {
@@ -110,9 +110,9 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "working",
-   "bubble": "앱·화면 개발 중",
-   "task": "앱 개발 작업 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-21T00:40:57+09:00"
   },
   {
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-21T00:49:38+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T00:44:58+09:00",
+   "kind": "report",
+   "from": "fable",
+   "to": "claude",
+   "title": "Fable → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-21T00:39:34+09:00",
    "kind": "note",
@@ -367,10 +383,10 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
    "last_active": "2026-11-21T00:44:03+09:00"
   },
   {
