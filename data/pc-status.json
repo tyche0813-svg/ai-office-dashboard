@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-20T18:02:15+09:00",
+ "updated_at": "2026-11-20T18:11:09+09:00",
  "source": "pc",
  "summary": {
   "done_today": 6,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-20T18:01:09+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "맡은 작업 진행 중",
    "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-20T18:02:15+09:00"
+   "last_active": "2026-11-20T18:11:10+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,78 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T18:10:24+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:10:24+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:09:17+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:09:17+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:08:10+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:08:10+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:06:21+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:04:53+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:03:25+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T18:01:09+09:00",
    "kind": "report",
@@ -302,78 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:36:02+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:34:55+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:33:48+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:33:04+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:32:14+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:30:38+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T17:30:25+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T17:30:13+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T17:30:03+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -411,10 +411,10 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "쇼츠 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-20T17:49:25+09:00"
   },
   {
