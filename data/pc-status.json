@@ -1,38 +1,38 @@
 {
- "updated_at": "2026-11-20T13:01:16+09:00",
+ "updated_at": "2026-11-20T13:16:59+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 1,
-  "idle": 13
+  "working": 4,
+  "idle": 10
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-20T13:01:09+09:00",
+   "last_active": "2026-11-20T13:15:41+09:00",
    "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 3명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-20T11:40:19+09:00"
+   "status": "working",
+   "bubble": "초안·사진 작업 중",
+   "task": "블로그 초안·사진 요청 처리 중",
+   "last_active": "2026-11-20T13:17:01+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "idle",
-   "bubble": "요청 대기",
-   "task": "대기 · 브라우저 켜져 있음",
-   "last_active": "2026-11-20T11:59:23+09:00"
+   "status": "working",
+   "bubble": "웹 화면 조작 중",
+   "task": "브라우저 웹 작업 진행 중",
+   "last_active": "2026-11-20T13:16:59+09:00"
   },
   {
    "id": "exaone",
@@ -65,10 +65,10 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "최근 호출 없음 · 대기",
-   "last_active": "2026-11-19T18:18:55+09:00"
+   "status": "working",
+   "bubble": "음성 합성 중",
+   "task": "음성 합성 요청 처리 중",
+   "last_active": "2026-11-20T13:16:36+09:00"
   },
   {
    "id": "claudeapi",
@@ -135,6 +135,62 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T13:17:01+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:16:37+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:16:36+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "speech",
+   "title": "영상 편집실 → Azure Speech: 음성 합성",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:13:39+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:13:19+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:12:34+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:11:27+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T13:01:16+09:00",
    "kind": "note",
@@ -318,62 +374,6 @@
    "to": "opus",
    "title": "어사이드 → Opus 보조: 에디터 입력 기록",
    "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:54:36+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:54:28+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 에디터 입력 지시",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:54:14+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T11:53:49+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "exaone",
-   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:53:28+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:53:00+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T11:52:40+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -431,11 +431,11 @@
    "id": "clip",
    "name": "클립 작업자",
    "role": "클립 영상 제작",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "새 요청 기다리는 중",
-   "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-19T18:39:20+09:00"
+   "bubble": "음성 생성 중",
+   "task": "클립 파이프라인 1건 진행 중 · 음성 생성",
+   "last_active": "2026-11-20T13:16:36+09:00"
   },
   {
    "id": "carousel",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T12:38:04+09:00"
+   "last_active": "2026-11-20T13:08:24+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-20T13:17:01+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-20T13:13:39+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-20T12:10:25+09:00",
    "agent": "shorts",
