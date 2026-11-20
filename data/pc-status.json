@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-20T13:37:37+09:00",
+ "updated_at": "2026-11-20T13:47:59+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 3,
-  "idle": 11
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
@@ -23,16 +23,16 @@
    "status": "working",
    "bubble": "초안·사진 작업 중",
    "task": "블로그 초안·사진 요청 처리 중",
-   "last_active": "2026-11-20T13:37:37+09:00"
+   "last_active": "2026-11-20T13:47:34+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-20T13:37:37+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-20T11:59:23+09:00"
   },
   {
    "id": "exaone",
@@ -113,7 +113,7 @@
    "status": "working",
    "bubble": "앱·화면 개발 중",
    "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-20T13:37:35+09:00"
+   "last_active": "2026-11-20T13:47:22+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,166 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T13:47:36+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:47:36+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:47:34+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:46:30+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:46:30+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:46:14+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:45:02+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:45:02+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:44:53+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:42:22+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:41:57+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:41:45+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:41:45+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:41:37+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:40:17+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T13:40:17+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:40:17+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:39:11+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:39:11+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T13:38:58+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
   {
    "time": "2026-11-20T13:37:37+09:00",
    "kind": "dispatch",
@@ -209,166 +369,6 @@
   },
   {
    "time": "2026-11-20T13:33:37+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:33:34+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:32:10+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:32:10+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:32:09+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:31:26+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "fable",
-   "title": "클로드 → Fable: 개발 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:29:37+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:29:14+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:29:13+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:29:13+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:28:29+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:26:35+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:25:30+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:24:23+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:20:21+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:19:15+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:17:01+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:16:37+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T13:16:36+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:13:39+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T13:13:19+09:00",
    "kind": "dispatch",
    "from": "claude",
    "to": "muse",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T13:08:24+09:00"
+   "last_active": "2026-11-20T13:38:45+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,12 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-20T13:42:22+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-20T13:29:37+09:00",
    "agent": "muse",
