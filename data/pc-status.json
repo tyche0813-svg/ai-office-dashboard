@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T18:42:59+09:00",
+ "updated_at": "2026-11-20T18:53:00+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-20T18:41:41+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "idle",
-   "bubble": "요청 대기",
-   "task": "대기 · 브라우저 켜져 있음",
-   "last_active": "2026-11-20T18:18:06+09:00"
+   "status": "working",
+   "bubble": "에디터 입력 중",
+   "task": "블로그 에디터 입력·임시저장 진행 중",
+   "last_active": "2026-11-20T18:53:00+09:00"
   },
   {
    "id": "exaone",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-20T18:42:54+09:00"
+   "last_active": "2026-11-20T18:52:46+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,62 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T18:53:00+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:52:15+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:50:47+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:48:13+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:46:44+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:45:16+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T18:44:09+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T18:42:36+09:00",
    "kind": "dispatch",
@@ -324,62 +380,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:10:24+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:09:17+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:09:17+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:08:10+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:08:10+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:06:21+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T18:04:53+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,7 +391,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-20T18:42:14+09:00"
+   "last_active": "2026-11-20T18:52:47+09:00"
   },
   {
    "id": "blog-b",
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T18:13:13+09:00"
+   "last_active": "2026-11-20T18:43:33+09:00"
   },
   {
    "id": "insight",
