@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-20T21:13:40+09:00",
+ "updated_at": "2026-11-20T21:42:45+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 9,
-  "working": 0,
-  "idle": 14
+  "done_today": 10,
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-20T21:01:09+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-20T21:42:47+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T21:42:45+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T21:06:26+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T20:30:42+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,10 +391,10 @@
    "id": "blog-b",
    "name": "블로그팀 B",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 3건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-20T20:51:12+09:00"
   },
   {
@@ -421,11 +421,11 @@
    "id": "reels",
    "name": "릴스 작업자",
    "role": "릴스 영상 제작",
-   "status": "idle",
-   "zone": "desk",
-   "bubble": "새 요청 기다리는 중",
-   "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-20T17:19:36+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "릴스 파이프라인 1건 완료",
+   "last_active": "2026-11-20T21:39:09+09:00"
   },
   {
    "id": "clip",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T21:10:36+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-20T21:41:16+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-20T21:39:09+09:00",
+   "agent": "reels",
+   "title": "릴스 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
+  {
+   "time": "2026-11-20T21:37:21+09:00",
+   "agent": "reels",
+   "title": "릴스 파이프라인 작업 시작",
+   "detail": "요청을 받아 제작을 시작"
+  },
   {
    "time": "2026-11-20T20:22:00+09:00",
    "agent": "blog-b",
