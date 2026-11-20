@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-20T15:26:49+09:00",
+ "updated_at": "2026-11-20T16:01:28+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 4,
-  "working": 0,
-  "idle": 14
+  "done_today": 5,
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-20T15:14:28+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-20T16:01:09+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-20T15:14:29+09:00"
   },
@@ -65,8 +65,8 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-20T15:14:05+09:00"
   },
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T16:01:28+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T15:24:09+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "muse",
    "title": "Opus 보조 → 뮤즈: 요청 전송",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T14:36:39+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
   }
  ],
  "agents": [
@@ -415,7 +415,7 @@
    "zone": "lounge",
    "bubble": "한 건 끝! 잠깐 휴식",
    "task": "쇼츠 파이프라인 1건 완료",
-   "last_active": "2026-11-20T15:26:28+09:00"
+   "last_active": "2026-11-20T16:00:22+09:00"
   },
   {
    "id": "reels",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T15:10:44+09:00"
+   "last_active": "2026-11-20T15:41:22+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-20T16:00:22+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
+  {
+   "time": "2026-11-20T15:59:34+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 작업 시작",
+   "detail": "요청을 받아 제작을 시작"
+  },
   {
    "time": "2026-11-20T15:26:28+09:00",
    "agent": "shorts",
