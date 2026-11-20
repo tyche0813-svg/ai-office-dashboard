@@ -1,38 +1,38 @@
 {
- "updated_at": "2026-11-20T14:39:13+09:00",
+ "updated_at": "2026-11-20T14:46:12+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 3,
-  "idle": 11
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-20T14:31:22+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-20T14:46:13+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
-   "last_active": "2026-11-20T14:39:13+09:00"
+   "status": "idle",
+   "bubble": "호출 대기",
+   "task": "오늘 호출 기록 있음 · 대기",
+   "last_active": "2026-11-20T14:15:46+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-20T14:39:13+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-20T14:16:56+09:00"
   },
   {
    "id": "exaone",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "맡은 작업 진행 중",
    "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-20T14:39:00+09:00"
+   "last_active": "2026-11-20T14:46:09+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T14:46:12+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T14:44:23+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T14:42:12+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T14:39:13+09:00",
    "kind": "dispatch",
@@ -350,30 +374,6 @@
    "to": "exaone",
    "title": "Opus 보조 → 엑사원: 문체 검사 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-20T14:09:54+09:00",
-   "kind": "report",
-   "from": "fable",
-   "to": "claude",
-   "title": "Fable → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T14:09:29+09:00",
-   "kind": "report",
-   "from": "muse",
-   "to": "opus",
-   "title": "뮤즈 → Opus 보조: 초안 전달",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T14:08:22+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-20T14:09:27+09:00"
+   "last_active": "2026-11-20T14:40:08+09:00"
   },
   {
    "id": "insight",
