@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-20T11:19:47+09:00",
+ "updated_at": "2026-11-20T11:29:42+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-20T11:19:36+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -102,9 +102,9 @@
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
    "status": "working",
-   "bubble": "맡은 작업 진행 중",
-   "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-20T11:19:45+09:00"
+   "bubble": "블로그 슬롯 작업 중",
+   "task": "블로그 슬롯 원고 작업 진행 중",
+   "last_active": "2026-11-20T11:29:42+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,70 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T11:29:20+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:29:20+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:25:20+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:24:37+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:23:31+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:22:46+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:21:40+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T11:20:56+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T11:19:47+09:00",
    "kind": "dispatch",
@@ -310,70 +374,6 @@
    "to": "claude",
    "title": "클로드: 작업 시작",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T10:06:29+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:50:37+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:46:15+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:37:31+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:24:32+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:21:19+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:17:20+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T09:13:02+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,11 +391,11 @@
    "id": "blog-b",
    "name": "블로그팀 B",
    "role": "블로그 원고 작성",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "다음 슬롯 대기",
-   "task": "다음 슬롯 대기",
-   "last_active": ""
+   "bubble": "원고 작성·검수 중",
+   "task": "블로그 원고 1건 작성·검수 중",
+   "last_active": "2026-11-20T11:29:36+09:00"
   },
   {
    "id": "blog-c",
