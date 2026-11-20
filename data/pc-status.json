@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-20T20:34:22+09:00",
+ "updated_at": "2026-11-20T20:45:07+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
-  "working": 2,
-  "idle": 12
+  "working": 4,
+  "idle": 10
  },
  "cast": [
   {
@@ -20,10 +20,10 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-20T19:08:38+09:00"
+   "status": "working",
+   "bubble": "초안·사진 작업 중",
+   "task": "블로그 초안·사진 요청 처리 중",
+   "last_active": "2026-11-20T20:45:07+09:00"
   },
   {
    "id": "aside",
@@ -32,16 +32,16 @@
    "status": "working",
    "bubble": "에디터 입력 중",
    "task": "블로그 에디터 입력·임시저장 진행 중",
-   "last_active": "2026-11-20T20:34:22+09:00"
+   "last_active": "2026-11-20T20:45:07+09:00"
   },
   {
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "검사 요청 대기",
-   "last_active": "2026-11-20T19:04:04+09:00"
+   "status": "working",
+   "bubble": "문체 검사 중",
+   "task": "원고 문체 검사 진행 중",
+   "last_active": "2026-11-20T20:44:33+09:00"
   },
   {
    "id": "chatgpt",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-20T20:34:15+09:00"
+   "last_active": "2026-11-20T20:44:37+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,142 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-20T20:45:00+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:44:44+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:44:44+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:44:39+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:44:33+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:43:58+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:42:56+09:00",
+   "kind": "report",
+   "from": "muse",
+   "to": "opus",
+   "title": "뮤즈 → Opus 보조: 초안 전달",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:42:54+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:42:54+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:41:03+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:39:56+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:39:56+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:39:45+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-20T20:39:12+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:39:12+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:37:22+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-20T20:35:33+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-20T20:34:22+09:00",
    "kind": "dispatch",
@@ -238,142 +374,6 @@
    "to": "claude",
    "title": "클로드: 작업 마침 · 대기",
    "coarse": false
-  },
-  {
-   "time": "2026-11-20T20:01:13+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T19:23:35+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T19:19:16+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T19:14:57+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T19:14:57+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "claude",
-   "title": "어사이드 → 클로드: 임시저장 1건 완료",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-20T19:14:48+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:14:32+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:14:12+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:13:16+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:12:59+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:12:24+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:11:57+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:11:26+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:11:04+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:10:47+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:10:11+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-20T19:10:00+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -395,7 +395,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-20T20:34:11+09:00"
+   "last_active": "2026-11-20T20:44:38+09:00"
   },
   {
    "id": "blog-c",
