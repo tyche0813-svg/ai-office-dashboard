@@ -1,29 +1,29 @@
 {
- "updated_at": "2026-11-21T18:06:10+09:00",
+ "updated_at": "2026-11-21T18:18:31+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
-  "working": 0,
-  "idle": 14
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-21T18:01:09+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-21T18:16:09+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-21T15:12:09+09:00"
+   "status": "working",
+   "bubble": "대본·음성 작업 중",
+   "task": "영상 대본·음성 요청 처리 중",
+   "last_active": "2026-11-21T18:18:13+09:00"
   },
   {
    "id": "aside",
@@ -65,10 +65,10 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-21T14:41:42+09:00"
+   "status": "working",
+   "bubble": "음성 합성 중",
+   "task": "음성 합성 요청 처리 중",
+   "last_active": "2026-11-21T18:18:13+09:00"
   },
   {
    "id": "claudeapi",
@@ -135,6 +135,38 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-21T18:18:13+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-21T18:18:13+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "speech",
+   "title": "영상 편집실 → Azure Speech: 음성 합성",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-21T18:15:15+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T18:14:53+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-21T18:06:10+09:00",
    "kind": "note",
@@ -342,38 +374,6 @@
    "to": "claude",
    "title": "클로드: 작업 시작",
    "coarse": false
-  },
-  {
-   "time": "2026-11-21T14:41:42+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-21T14:41:42+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-21T14:40:53+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-21T14:36:30+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
   }
  ],
  "agents": [
@@ -411,11 +411,11 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "쇼츠 파이프라인 1건 완료",
-   "last_active": "2026-11-21T18:03:11+09:00"
+   "status": "working",
+   "zone": "desk",
+   "bubble": "음성 생성 중",
+   "task": "쇼츠 파이프라인 1건 진행 중 · 음성 생성",
+   "last_active": "2026-11-21T18:18:13+09:00"
   },
   {
    "id": "reels",
@@ -489,6 +489,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-21T18:18:13+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-21T18:18:12+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 작업 시작",
+   "detail": "요청을 받아 제작을 시작"
+  },
   {
    "time": "2026-11-21T18:03:11+09:00",
    "agent": "shorts",
