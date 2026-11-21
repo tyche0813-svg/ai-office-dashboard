@@ -47,8 +47,8 @@
 | `data/pickle-status.json` | 피클 앱이 덮어쓸 상태(지금은 템플릿) | 공개 |
 | `tools/pc_watch.py` | PC 감시 스크립트 | 공개(식별 값 없음) |
 | `tools/test_masking.py` | 마스킹 단위 테스트 | 공개(가짜 값만) |
-| `worker/` | 실시간 채널 + '지시' 대화창(Cloudflare Worker) 소스. 토큰은 없음 | 공개 |
-| `assets/chat.js`, `tools/chat_runner.py`, `tools/start_chat_runner.ps1`, `tools/test_chat.py` | '지시' 대화창 화면·PC 작업기·테스트 | 공개(식별 값 없음) |
+| `worker/` | 실시간 채널 + 대화창(Cloudflare Worker) 소스. 토큰은 없음 | 공개 |
+| `assets/chat.js`, `tools/chat_runner.py`, `tools/start_chat_runner.ps1`, `tools/test_chat.py` | 대화창 화면·PC 작업기·테스트 | 공개(식별 값 없음) |
 | `local/` | 스캔 보고서·로컬 설정·감시 로그·스크린샷 | **비공개(.gitignore)** |
 
 ## 데이터 형식
@@ -110,19 +110,23 @@
 - Worker 도 받은 JSON 을 다시 검사합니다: 60KB 초과, 모르는 키, 80자 넘는 문자열, 식별 패턴(경로·이메일·아이디·IP·전화·금액 등)이 하나라도 있으면 저장하지 않습니다.
 - 감시 스크립트는 20초마다 상태를 보고, 내용이 바뀌었거나 2분이 지나면 올립니다. git 푸시는 30분마다(또는 일하는 AI 가 바뀌고 10분 뒤) 백업용으로만 합니다.
 - 배포: `cd worker` → `npx wrangler deploy`. 토큰 교체: 환경 변수와 `npx wrangler secret put PUSH_TOKEN` 을 같은 값으로.
-## '지시' 대화창(2026-11-21~)
+## 대화창(2026-11-21~)
 
-지도 오른쪽 아래 `지시` 버튼 → 대화창. 대표님이 적은 지시를 **이 PC 의 Claude** 가 처리하고 답을 돌려줍니다.
+사무실 지도 바로 아래에 항상 보이는 대화 영역입니다. 대표님이 적으면 AI 가 그 자리에서 답합니다.
 
-- 흐름: 화면(`assets/chat.js`) → Worker `ai-office-live` 의 `/chat/*`(`worker/src/chat.js`, 별도 Durable Object) → PC 작업기(`tools/chat_runner.py`)가 10초마다 가져가 `claude -p` 로 실행 → 답을 Worker 에 올림 → 화면이 받아 표시.
-- **지시와 답은 Worker 안에만 있습니다.** `data/*.json`, 공개 `/status`, 이 저장소, 작업기 기록에는 내용이 남지 않습니다(기록에는 번호·걸린 시간·글자 수만). 화면 연출은 고정 문구 두 개(`대표님 지시 접수`, `대표님께 답변 전달`)이고, 로그인한 그 기기 화면에서만 보입니다.
+- **받는 AI**: 이름을 안 붙이면 클로드(이 PC 의 Claude). `@피클` `@Instinct` `@Pally` `@키링` 으로 시작하면 그 AI 에게 갑니다. 입력창에 `@` 를 치거나 왼쪽 `@` 버튼을 누르면 이름을 고를 수 있습니다.
+- **클로드 경로**: 화면(`assets/chat.js`) → Worker `ai-office-live` 의 `/chat/*`(`worker/src/chat.js`, 별도 Durable Object) → PC 작업기(`tools/chat_runner.py`)가 10초마다 가져가 `claude -p` 로 실행 → 답을 Worker 에 올림.
+- **@AI 경로(노션 연락판)**: PC 작업기가 그 AI 연락판의 `클로드 → <AI>` 칸 맨 아래에 `날짜 시각 · [대표님 지시] 내용` 한 줄을 적고, `<AI> → 클로드` 칸에 새 줄이 생기면 그 줄을 답으로 올립니다. 그 AI 들은 연락판을 약 5분마다 확인하므로 답은 몇 분 걸립니다. 60분 동안 새 줄이 없으면 `응답 없음`. 연락판에 적힌 글은 화면에 글자로 보여 줄 뿐 PC 에서 실행하지 않습니다.
+- **공개 범위**: 글 내용은 PIN 으로 로그인한 기기에서만 보입니다. 로그인하지 않은 방문자에게는 `대표님 → 키링 지시 · 답변 완료` 같은 고정 문구(누구에게·상태·시각)만 보이고, 캐릭터 머리 위 말풍선도 고정 문구 두 개(`대표님 지시 접수`, `대표님께 답변`)뿐입니다. 입력은 로그인해야만 됩니다(로그인 전에는 입력창 자리에 `PIN으로 로그인`).
+  내용까지 공개하려면 `worker/src/chat.js` 의 `PUBLIC_TEXT` 를 바꾸고 화면을 맞춰야 합니다(답에 개인 정보가 섞일 수 있으니 바꾸기 전에 확인).
+- **지시와 답의 내용은 Worker 안에만 있습니다.** `data/*.json`, 공개 `/status`, 이 저장소, 작업기 기록에는 내용이 남지 않습니다(기록에는 번호·걸린 시간·글자 수만). 연락판 페이지 번호도 저장소에 두지 않고 `local/chat_boards.local.json`(비공개)에만 둡니다.
 - 로그인: PIN → 무작위 세션 토큰(그 브라우저 localStorage 에만 보관, Worker 에는 해시만, 30일 만료, `로그아웃`하면 즉시 폐기). 쿠키를 쓰지 않는 이유: 화면(github.io)과 Worker(workers.dev)는 다른 사이트라 쿠키가 서드파티 쿠키가 되어 iOS Safari·삼성 인터넷·시크릿 창에서 막힙니다.
-- 제한: 틀린 PIN 은 같은 주소 15분에 5번, 전체 24시간에 30번이면 잠김. 지시 2,000자, 답 12,000자, 동시에 1건(앞 지시가 끝나야 다음 지시), 한 건 15분, 하루 30건. 브라우저 요청은 이 페이지 주소(`https://tyche0813-svg.github.io`)에서 온 것만 받습니다.
-- 지시마다 새 대화로 처리합니다(앞 지시 내용을 기억하지 않음). 필요한 내용은 한 지시에 다 적습니다.
+- 제한: 틀린 PIN 은 같은 주소 15분에 5번, 전체 24시간에 30번이면 잠김. 지시 2,000자, 답 12,000자, 같은 AI 에게는 한 번에 1건(답이 와야 다음 지시, 다른 AI 에게는 따로 가능), 클로드 한 건 15분, 하루 30건(전체). 브라우저 요청은 이 페이지 주소(`https://tyche0813-svg.github.io`)에서 온 것만 받습니다.
+- 지시마다 새 대화로 처리합니다(앞 지시 내용을 기억하지 않음). 클로드가 긴 지시를 처리하는 동안에는 연락판 답 확인도 잠시 미뤄집니다.
 
 ### 처리 범위(안전 장치)
 
-헤드리스 실행은 권한 확인 창을 띄울 수 없어서 처음부터 좁혀 실행합니다(`tools/chat_runner.py` 의 `build_cmd`).
+클로드 경로의 헤드리스 실행은 권한 확인 창을 띄울 수 없어서 처음부터 좁혀 실행합니다(`tools/chat_runner.py` 의 `build_cmd`). @AI 경로는 연락판에 한 줄을 적고 읽기만 합니다.
 
 | 구분 | 내용 |
 |---|---|
@@ -142,12 +146,25 @@
 3. **PC 쪽 같은 토큰**: 별도 PowerShell 창에서 `setx AI_OFFICE_CHAT_TOKEN "<2번과 같은 값>"`.
 4. **작업기 켜기**: `powershell -NoProfile -ExecutionPolicy Bypass -File "%USERPROFILE%\devi_office_dashboard	ools\start_chat_runner.ps1"` (창 없이 실행, 이미 돌고 있으면 건너뜀. PowerShell 창에서 칠 때는 `%USERPROFILE%` 대신 `$env:USERPROFILE`).
    끄기는 같은 명령 뒤에 ` -Stop`. 연결 확인만 하려면 `python tools/chat_runner.py --check`(토큰 값은 출력하지 않음).
-5. 페이지에서 `지시` → PIN 입력 → 맨 위에 `PC 연결됨`이 보이면 준비 끝.
+5. 페이지의 지도 아래 대화창에서 `PIN으로 로그인` → PIN 입력 → `PC 연결됨`이 보이면 준비 끝.
+
+### @AI(노션 연락판) 연결 — 한 번만
+
+1. 노션 통합 만들기: 브라우저에서 `notion.so/profile/integrations` → `새 API 통합`(New integration) → 이름(예: AI 오피스), 워크스페이스 선택, 유형 `내부`(Internal) → 저장.
+   기능(Capabilities)은 `콘텐츠 읽기`·`콘텐츠 삽입`만 켜고 `콘텐츠 업데이트`·사용자 정보는 끕니다.
+2. 같은 화면의 `내부 통합 시크릿`(Internal Integration Secret)을 `표시` → 복사(이 값을 채팅·파일에 붙여 넣지 않기).
+3. 연락판 4개(피클·Instinct·Pally·키링) 페이지를 각각 열어 오른쪽 위 `···` → `연결`(Connections) → 방금 만든 통합을 골라 추가.
+4. 별도 PowerShell 창에서 `setx AI_OFFICE_NOTION_TOKEN "<2번에서 복사한 값>"`. 작업기는 다시 켜지 않아도 다음 지시부터 읽습니다.
+5. 확인: `python tools/chat_runner.py --check` 에 `notion token: set`, `boards file: found` 가 보이면 됩니다. 대화창에 `@키링 시험입니다` 를 보내면 연락판에 한 줄이 생깁니다.
+
+- 연락판 주소는 `local/chat_boards.local.json` 에 있습니다(`{"keyring": {"page": "<페이지 번호>", "name": "키링"}, ...}`). 연락판을 새로 만들면 여기만 고칩니다.
+- 토큰이 없으면 @AI 지시는 `노션 연결 설정이 필요합니다` 로, 통합을 연결하지 않은 연락판은 `연락판에 노션 통합이 연결되어 있지 않습니다` 로 바로 실패 처리됩니다.
+- 칸 찾기: 페이지를 API 로 읽어 `클로드 → <AI>` / `<AI> → 클로드` 제목을 찾습니다(제목 아래 나란히 놓인 줄, 토글·콜아웃·단 안쪽 모두). 새 줄은 지시를 적을 때 있던 줄 목록과 생성 시각으로 가립니다.
 
 - 기록: `local/logs/chat_runner.log`(비공개 폴더). 하루 건수: `local/chat_state.json`.
 - PC 켤 때 자동 실행(원할 때 직접 등록): `Win + R` → `shell:startup` → 새 바로 가기 → 항목 위치에 4번 명령 한 줄.
-- 급히 막기: 작업기를 끄거나(`-Stop`), Cloudflare 에서 `CHAT_PC_TOKEN` 또는 `APP_PIN` 을 지우면 바로 멈춥니다. 대화 기록은 대화창의 `기록 지우기`.
-- 테스트: `python tools/test_chat.py`(가짜 Worker·모의 실행. 지시·답이 공개 파일에 남지 않는지, 도구 범위, 가림 처리 확인).
+- 급히 막기: 작업기를 끄거나(`-Stop`), Cloudflare 에서 `CHAT_PC_TOKEN` 또는 `APP_PIN` 을 지우면 바로 멈춥니다. 노션만 끊으려면 연락판의 연결에서 통합을 빼거나 `AI_OFFICE_NOTION_TOKEN` 을 지웁니다. 대화 기록은 대화창의 `기록 지우기`.
+- 테스트: `python tools/test_chat.py`(가짜 Worker·가짜 노션·모의 실행. 지시·답이 공개 파일에 남지 않는지 — 클로드·@AI 경로 모두 —, 도구 범위, 가림 처리, 연락판 칸 찾기·새 줄 읽기 확인).
 
 ## 노션 연락판 AI(피클 · Instinct · Pally)
 
