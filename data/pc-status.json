@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-21T14:41:58+09:00",
+ "updated_at": "2026-11-21T14:56:51+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 2,
-  "idle": 12
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -20,9 +20,9 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-21T14:41:42+09:00"
   },
   {
@@ -65,9 +65,9 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "working",
-   "bubble": "음성 합성 중",
-   "task": "음성 합성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-21T14:41:42+09:00"
   },
   {
@@ -101,8 +101,8 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-21T14:32:20+09:00"
   },
@@ -401,10 +401,10 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-21T14:13:05+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-21T14:23:12+09:00"
+   "last_active": "2026-11-21T14:53:33+09:00"
   },
   {
    "id": "insight",
