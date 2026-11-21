@@ -13,7 +13,7 @@
   var LIVE_URL = 'https://ai-office-live.btc-indicator-mobile.workers.dev/status';
   var FILE_URL = 'data/pc-status.json', NOTION_URL = 'data/notion-agents.json', PICKLE_URL = 'data/pickle-status.json';
   /* 노션 연락판으로 일하는 AI: 상태는 data/notion-agents.json(없으면 예전 피클 파일)에서만 받는다 */
-  var NOTION_IDS = { pickle: 1, instinct: 1, pally: 1 };
+  var NOTION_IDS = { pickle: 1, instinct: 1, pally: 1, keyring: 1 };
   var NOTION_WORK_MS = 20 * 60000, NOTION_REST_MS = 60 * 60000;
   var NOTION_TEXT = { working: ['작업 보고 중', '노션 연락판에 작업 결과 보고'], resting: ['보고 완료', '노션 연락판 보고 완료'], idle: ['요청 대기', '노션 연락판 대기'] };
   var LIVE_MS = 5000, FILE_MS = 45000;
@@ -52,7 +52,8 @@
     { id: 'pickle', name: '피클', tag: '피클', rank: '비서', role: '클라우드 비서', color: '#7ccf6b', mark: '피', src: 'pickle', animal: 'bear', fur: '#bfe3c9' },
     { id: 'stability', name: 'Stability', tag: 'Stability', rank: '휴직', role: '이미지 · 중단', color: '#a78bfa', icon: 'stability', animal: 'dog', fur: '#cfc6bb' },
     { id: 'instinct', name: 'Instinct', tag: 'Instinct', rank: '비서', role: '일정 · 자료 조사 · 콘텐츠', color: '#e2e8f0', mark: 'I', plate: '#ffffff', serif: true, src: 'pickle', animal: 'cat', fur: '#efe6d8' },
-    { id: 'pally', name: 'Pally', tag: 'Pally', rank: '비서', role: '노션 비서', color: '#64748b', icon: 'pally', src: 'pickle', animal: 'panda', fur: '#f6f3ee' }
+    { id: 'pally', name: 'Pally', tag: 'Pally', rank: '비서', role: '노션 비서', color: '#64748b', icon: 'pally', src: 'pickle', animal: 'panda', fur: '#f6f3ee' },
+    { id: 'keyring', name: '키링', tag: '키링', rank: '비서', role: '정보 조사 · 일정 · 문서', color: '#f59e0b', mark: '키', src: 'pickle', animal: 'rabbit', fur: '#f3e3c3' }
   ];
   var CAST_BY = {};
   CAST.forEach(function (c) { CAST_BY[c.id] = c; });
@@ -64,7 +65,7 @@
   var SEATS = {
     claude: [659, 950, 'CL'],
     opus: [644, 680, 'A'], aside: [756, 636, 'A'], muse: [869, 592, 'A'], exaone: [969, 552, 'A'], chatgpt: [1069, 520, 'A'],
-    fable: [809, 774, 'B'], codex: [956, 714, 'B'], speech: [1073, 668, 'B'], routine: [1209, 624, 'B'],
+    fable: [809, 774, 'B'], codex: [956, 714, 'B'], speech: [1073, 668, 'B'], routine: [1209, 624, 'B'], keyring: [1340, 580, 'B'],
     claudeapi: [972, 886, 'C'], copilot: [1103, 836, 'C'], stability: [1222, 786, 'C'], vooy: [1331, 742, 'C'], instinct: [1422, 705, 'C'],
     pickle: [1425, 800, 'R'], pally: [1512, 776, 'R']
   };
@@ -288,7 +289,7 @@
     logs.sort(function (a, b) { return (b.t ? b.t.getTime() : 0) - (a.t ? a.t.getTime() : 0); });
     events.sort(function (a, b) { return b.t.getTime() - a.t.getTime(); });
     /* vooy: 활동 신호를 아직 모른다 -> '대기'가 아니라 '연결 안 됨'(회색)으로 보여 준다 */
-    ['instinct', 'pally'].forEach(function (id) {
+    ['instinct', 'pally', 'keyring'].forEach(function (id) {
       if (!cast[id].known) { cast[id].status = 'offline'; cast[id].bubble = ''; cast[id].task = '연결 안 됨 · 연락판 연결 전'; }
     });
     var v = cast.vooy;

@@ -196,7 +196,7 @@ function create(opts) {
   }
 
   /* 책상 줄(칸막이 책상 5 x 3 = 15석) + 총괄 자리 + 안내 데스크 2석 = 18석 */
-  const HOME = {}, ROWS = [['opus', 'aside', 'muse', 'exaone', 'chatgpt'], ['fable', 'codex', 'speech', 'routine', null], ['claudeapi', 'copilot', 'stability', 'vooy', 'instinct']];
+  const HOME = {}, ROWS = [['opus', 'aside', 'muse', 'exaone', 'chatgpt'], ['fable', 'codex', 'speech', 'routine', 'keyring'], ['claudeapi', 'copilot', 'stability', 'vooy', 'instinct']];
   ROWS.forEach(function (row, ri) {
     row.forEach(function (id, i) { const p = desk(id, -4.2 + i * 2.1, -1.2 + ri * 2.9, 1.6); if (id) HOME[id] = p; });
   });

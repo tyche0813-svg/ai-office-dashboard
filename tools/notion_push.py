@@ -36,6 +36,7 @@ AGENTS = {
     "pickle": ("피클", "클라우드 비서"),
     "instinct": ("Instinct", "일정 · 자료 조사 · 콘텐츠"),
     "pally": ("Pally", "노션 비서"),
+    "keyring": ("키링", "정보 조사 · 일정 · 문서"),
 }
 PHRASES = {
     "working": ("작업 보고 중", "노션 연락판에 작업 결과 보고"),
