@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="assets/app/favicon.png">
 <link rel="apple-touch-icon" href="assets/app/apple-touch-icon.png">
 <title>AI 오피스</title>
-<link rel="stylesheet" href="assets/style.css?v=1119b">
+<link rel="stylesheet" href="assets/style.css?v=1121a">
 <script type="importmap">{"imports":{"three":"./assets/vendor/three.module.min.js"}}</script>
 </head>
 <body>
@@ -24,6 +24,7 @@
     </div>
     <button type="button" id="installBtn" class="install" hidden>앱 설치</button>
     <div class="zoom" role="group" aria-label="확대 축소">
+      <button type="button" id="chatBtn" class="wide chat-btn" aria-label="지시 대화창 열기" hidden>지시</button>
       <button type="button" id="zoomIn" aria-label="확대">+</button>
       <button type="button" id="zoomOut" aria-label="축소">−</button>
       <button type="button" id="zoomFit" class="wide">전체</button>
@@ -80,7 +81,8 @@
     </footer>
   </aside>
 </div>
-<script src="assets/app.js?v=1119b"></script>
-<script type="module" src="assets/office3d.js?v=1119b" onerror="window.dispatchEvent(new Event('office3d-fail'))"></script>
+<script src="assets/app.js?v=1121a"></script>
+<script src="assets/chat.js?v=1121a" defer></script>
+<script type="module" src="assets/office3d.js?v=1121a" onerror="window.dispatchEvent(new Event('office3d-fail'))"></script>
 </body>
 </html>

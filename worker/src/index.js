@@ -1,7 +1,11 @@
 /* AI 오피스 실시간 채널.
    GET  /status  누구나 읽기(이미 비식별 처리된 JSON 만 보관)
    POST /status  PC 감시 스크립트만 쓰기(Authorization: Bearer <PUSH_TOKEN>)
+   /chat/*      '지시' 대화창(src/chat.js). 지시·답은 별도 Durable Object 에만 있고 /status 로는 나가지 않는다.
    쓰기는 여기서도 한 번 더 검사한다: 크기·형식·식별 패턴이 하나라도 걸리면 저장하지 않는다. */
+
+import { handleChat, ChatRoom } from './chat.js';
+export { ChatRoom };
 
 const MAX_BYTES = 60000;
 const MAX_TEXT = 80;
@@ -67,6 +71,8 @@ function sameToken(a, b) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    /* '지시' 대화창(비공개, PIN·PC 토큰 필요). 공개 상태(/status)와 저장소가 따로다. */
+    if (url.pathname.startsWith('/chat/')) return handleChat(request, env);
     if (url.pathname !== '/status') return json({ error: 'not found' }, 404);
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'GET', 'access-control-max-age': '86400' } });

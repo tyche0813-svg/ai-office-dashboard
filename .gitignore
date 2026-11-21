@@ -10,3 +10,6 @@ __pycache__/
 
 .wrangler/
 node_modules/
+
+# 수정 전 백업
+*.bak_*

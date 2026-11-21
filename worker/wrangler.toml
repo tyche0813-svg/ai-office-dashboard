@@ -1,5 +1,6 @@
 # AI 오피스 실시간 채널 (Cloudflare Workers 무료 플랜)
 # 쓰기 토큰은 여기 적지 않는다:  npx wrangler secret put PUSH_TOKEN
+# '지시' 대화창 비밀값도 여기 적지 않는다(사용자가 직접):  APP_PIN(6자 이상), CHAT_PC_TOKEN(21자 이상)
 name = "ai-office-live"
 main = "src/index.js"
 compatibility_date = "2025-10-01"
@@ -12,3 +13,12 @@ class_name = "OfficeState"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["OfficeState"]
+
+# '지시' 대화창 저장소(지시·답). 공개 상태(STATE)와 분리.
+[[durable_objects.bindings]]
+name = "CHAT"
+class_name = "ChatRoom"
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["ChatRoom"]

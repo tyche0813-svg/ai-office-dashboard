@@ -310,6 +310,13 @@
     firstIntake = false;
   }
 
+  /* '지시' 대화창(assets/chat.js)이 부른다: 고정 문구 한 줄을 클로드 머리 위에 띄운다. 지시·답 내용은 여기로 오지 않는다. */
+  window.__aioLocalNote = function (title) {
+    var e = { t: new Date(), key: 'local|' + Date.now(), kind: 'note', from: '', to: 'claude', title: String(title).slice(0, 24), coarse: false, members: [] };
+    if (state.demo || !state.placed) return;
+    if (V3) V3.pushEvent(e); else evQueue.push({ e: e, at: simT });
+  };
+
   var lastSig = '';
   function apply() {
     var sig = (state.pc.ok ? state.pc.text || JSON.stringify(state.pc.data) : 'x') + '|' + (state.pickle.ok ? state.pickle.text || JSON.stringify(state.pickle.data) : 'x') + '|' + state.mode;

@@ -47,7 +47,8 @@
 | `data/pickle-status.json` | 피클 앱이 덮어쓸 상태(지금은 템플릿) | 공개 |
 | `tools/pc_watch.py` | PC 감시 스크립트 | 공개(식별 값 없음) |
 | `tools/test_masking.py` | 마스킹 단위 테스트 | 공개(가짜 값만) |
-| `worker/` | 실시간 채널(Cloudflare Worker) 소스. 토큰은 없음 | 공개 |
+| `worker/` | 실시간 채널 + '지시' 대화창(Cloudflare Worker) 소스. 토큰은 없음 | 공개 |
+| `assets/chat.js`, `tools/chat_runner.py`, `tools/start_chat_runner.ps1`, `tools/test_chat.py` | '지시' 대화창 화면·PC 작업기·테스트 | 공개(식별 값 없음) |
 | `local/` | 스캔 보고서·로컬 설정·감시 로그·스크린샷 | **비공개(.gitignore)** |
 
 ## 데이터 형식
@@ -109,6 +110,45 @@
 - Worker 도 받은 JSON 을 다시 검사합니다: 60KB 초과, 모르는 키, 80자 넘는 문자열, 식별 패턴(경로·이메일·아이디·IP·전화·금액 등)이 하나라도 있으면 저장하지 않습니다.
 - 감시 스크립트는 20초마다 상태를 보고, 내용이 바뀌었거나 2분이 지나면 올립니다. git 푸시는 30분마다(또는 일하는 AI 가 바뀌고 10분 뒤) 백업용으로만 합니다.
 - 배포: `cd worker` → `npx wrangler deploy`. 토큰 교체: 환경 변수와 `npx wrangler secret put PUSH_TOKEN` 을 같은 값으로.
+## '지시' 대화창(2026-11-21~)
+
+지도 오른쪽 아래 `지시` 버튼 → 대화창. 대표님이 적은 지시를 **이 PC 의 Claude** 가 처리하고 답을 돌려줍니다.
+
+- 흐름: 화면(`assets/chat.js`) → Worker `ai-office-live` 의 `/chat/*`(`worker/src/chat.js`, 별도 Durable Object) → PC 작업기(`tools/chat_runner.py`)가 10초마다 가져가 `claude -p` 로 실행 → 답을 Worker 에 올림 → 화면이 받아 표시.
+- **지시와 답은 Worker 안에만 있습니다.** `data/*.json`, 공개 `/status`, 이 저장소, 작업기 기록에는 내용이 남지 않습니다(기록에는 번호·걸린 시간·글자 수만). 화면 연출은 고정 문구 두 개(`대표님 지시 접수`, `대표님께 답변 전달`)이고, 로그인한 그 기기 화면에서만 보입니다.
+- 로그인: PIN → 무작위 세션 토큰(그 브라우저 localStorage 에만 보관, Worker 에는 해시만, 30일 만료, `로그아웃`하면 즉시 폐기). 쿠키를 쓰지 않는 이유: 화면(github.io)과 Worker(workers.dev)는 다른 사이트라 쿠키가 서드파티 쿠키가 되어 iOS Safari·삼성 인터넷·시크릿 창에서 막힙니다.
+- 제한: 틀린 PIN 은 같은 주소 15분에 5번, 전체 24시간에 30번이면 잠김. 지시 2,000자, 답 12,000자, 동시에 1건(앞 지시가 끝나야 다음 지시), 한 건 15분, 하루 30건. 브라우저 요청은 이 페이지 주소(`https://tyche0813-svg.github.io`)에서 온 것만 받습니다.
+- 지시마다 새 대화로 처리합니다(앞 지시 내용을 기억하지 않음). 필요한 내용은 한 지시에 다 적습니다.
+
+### 처리 범위(안전 장치)
+
+헤드리스 실행은 권한 확인 창을 띄울 수 없어서 처음부터 좁혀 실행합니다(`tools/chat_runner.py` 의 `build_cmd`).
+
+| 구분 | 내용 |
+|---|---|
+| 쓸 수 있는 도구 | `Read`, `Glob`, `Grep`(파일 읽기·찾기), `WebSearch`, `WebFetch`(웹 검색·읽기) |
+| 쓸 수 없는 도구 | `Bash`·`PowerShell`(명령 실행), `Edit`·`Write`·`NotebookEdit`(파일 쓰기), 하위 에이전트, 스킬, MCP 연결(메일·드라이브·노션·브라우저 조작) |
+| 옵션 | `--tools`(위 5개만 남김) `--allowedTools` `--disallowedTools`(`.env` 읽기 거부 포함) `--permission-mode dontAsk` `--permission-prompts none`(확인이 필요한 일은 자동 거부) `--strict-mcp-config` `--disable-slash-commands` `--no-chrome` |
+| 쓰지 않는 옵션 | `--dangerously-skip-permissions` |
+| 추가 지침 | 한국어로 답, 읽기·조회만, 발행·예약 금지, 삭제·결제·계정 변경 금지, 비밀번호·키 입력·출력 금지, `.env` 금지, 못 하는 일은 무엇을 해야 하는지만 답으로 적기 |
+
+즉 "오늘 임시저장 몇 건이야?", "어제 로그에 오류 있었어?", "이 주제 검색해 줘" 같은 **확인·조회·검색**은 되고, 글 작성·임시저장·파일 수정·스크립트 실행은 되지 않습니다(그런 지시에는 해야 할 일을 정리해 답합니다). 답은 올리기 전에 긴 토큰 모양을 가립니다(작업기와 Worker 양쪽).
+
+### 처음 한 번 설정(비밀값은 직접 넣습니다 — 채팅·파일·저장소에 적지 않기)
+
+1. **PIN**: Cloudflare 대시보드 → Workers & Pages → `ai-office-live` → Settings → Variables and Secrets → Add → Type `Secret`, Name `APP_PIN`, Value 에 6자 이상 PIN → Deploy.
+2. **PC 토큰**: 같은 화면에서 Add → Type `Secret`, Name `CHAT_PC_TOKEN`, Value 에 21자 이상 무작위 문자열 → Deploy.
+   (명령으로 넣으려면 `worker` 폴더에서 `npx wrangler secret put APP_PIN`, `npx wrangler secret put CHAT_PC_TOKEN` — 값은 물어볼 때 입력)
+3. **PC 쪽 같은 토큰**: 별도 PowerShell 창에서 `setx AI_OFFICE_CHAT_TOKEN "<2번과 같은 값>"`.
+4. **작업기 켜기**: `powershell -NoProfile -ExecutionPolicy Bypass -File "%USERPROFILE%\devi_office_dashboard	ools\start_chat_runner.ps1"` (창 없이 실행, 이미 돌고 있으면 건너뜀. PowerShell 창에서 칠 때는 `%USERPROFILE%` 대신 `$env:USERPROFILE`).
+   끄기는 같은 명령 뒤에 ` -Stop`. 연결 확인만 하려면 `python tools/chat_runner.py --check`(토큰 값은 출력하지 않음).
+5. 페이지에서 `지시` → PIN 입력 → 맨 위에 `PC 연결됨`이 보이면 준비 끝.
+
+- 기록: `local/logs/chat_runner.log`(비공개 폴더). 하루 건수: `local/chat_state.json`.
+- PC 켤 때 자동 실행(원할 때 직접 등록): `Win + R` → `shell:startup` → 새 바로 가기 → 항목 위치에 4번 명령 한 줄.
+- 급히 막기: 작업기를 끄거나(`-Stop`), Cloudflare 에서 `CHAT_PC_TOKEN` 또는 `APP_PIN` 을 지우면 바로 멈춥니다. 대화 기록은 대화창의 `기록 지우기`.
+- 테스트: `python tools/test_chat.py`(가짜 Worker·모의 실행. 지시·답이 공개 파일에 남지 않는지, 도구 범위, 가림 처리 확인).
+
 ## 노션 연락판 AI(피클 · Instinct · Pally)
 
 - `python tools/notion_push.py <pickle|instinct|pally> <줄 수>` → `data/notion-agents.json`. 줄 수 = 그 AI 연락판의 'AI → 클로드' 아래 줄 수(양식 줄 제외). 글 내용은 받지 않습니다.
