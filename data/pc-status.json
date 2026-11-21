@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-22T01:36:35+09:00",
+ "updated_at": "2026-11-22T01:47:32+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 3,
-  "idle": 11
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T01:36:28+09:00",
+   "last_active": "2026-11-22T01:43:10+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -110,18 +110,18 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "working",
-   "bubble": "앱·화면 개발 중",
-   "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-22T01:36:28+09:00"
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
+   "last_active": "2026-11-22T01:39:49+09:00"
   },
   {
    "id": "routine",
    "name": "클라우드 루틴",
    "role": "새벽 키워드 수집",
-   "status": "working",
-   "bubble": "새벽 키워드 수집 중",
-   "task": "예정 시간대 기준 표시 · 키워드 수집",
+   "status": "idle",
+   "bubble": "다음 새벽 대기",
+   "task": "다음 새벽 실행 대기",
    "last_active": ""
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T01:43:55+09:00",
+   "kind": "report",
+   "from": "fable",
+   "to": "claude",
+   "title": "Fable → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T01:36:35+09:00",
    "kind": "report",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:06:46+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-22T01:36:23+09:00"
+   "last_active": "2026-11-22T01:47:20+09:00"
   },
   {
    "id": "insight",
