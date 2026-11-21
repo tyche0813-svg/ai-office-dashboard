@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T06:29:24+09:00",
+ "updated_at": "2026-11-22T06:34:51+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-22T06:26:12+09:00"
+   "last_active": "2026-11-22T06:31:39+09:00"
   },
   {
    "id": "insight",
