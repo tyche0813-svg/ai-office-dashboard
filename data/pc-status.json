@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-22T07:13:17+09:00",
+ "updated_at": "2026-11-22T07:22:49+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 1,
-  "idle": 13
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T07:13:06+09:00",
+   "last_active": "2026-11-22T07:22:32+09:00",
    "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "idle",
-   "bubble": "요청 대기",
-   "task": "대기 · 브라우저 켜져 있음",
-   "last_active": "2026-11-21T20:05:41+09:00"
+   "status": "working",
+   "bubble": "에디터 입력 중",
+   "task": "블로그 에디터 입력·임시저장 진행 중",
+   "last_active": "2026-11-22T07:22:49+09:00"
   },
   {
    "id": "exaone",
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-22T01:32:21+09:00"
+   "status": "working",
+   "bubble": "블로그 슬롯 작업 중",
+   "task": "블로그 슬롯 원고 작업 진행 중",
+   "last_active": "2026-11-22T07:22:32+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,84 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T07:22:49+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:21:21+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:19:32+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:17:22+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:16:38+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:15:53+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:14:26+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T07:14:12+09:00",
+   "kind": "meeting",
+   "from": "claude",
+   "to": "",
+   "title": "회의 시작: 블로그 슬롯",
+   "coarse": true,
+   "members": [
+    "claude",
+    "opus",
+    "aside",
+    "muse"
+   ]
+  },
+  {
+   "time": "2026-11-22T07:13:42+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T07:13:17+09:00",
    "kind": "note",
@@ -302,78 +380,6 @@
    "to": "fable",
    "title": "클로드 → Fable: 개발 작업 배정",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:34:03+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:32:57+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:32:13+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:32:13+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "opus",
-   "title": "클로드 → Opus 보조: 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:32:13+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:31:08+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:30:02+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:28:56+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:28:12+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -381,11 +387,11 @@
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "다음 슬롯 대기",
-   "task": "다음 슬롯 대기",
-   "last_active": ""
+   "bubble": "원고 작성·검수 중",
+   "task": "블로그 원고 1건 작성·검수 중",
+   "last_active": "2026-11-22T07:22:32+09:00"
   },
   {
    "id": "blog-b",
