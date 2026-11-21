@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-21T22:34:45+09:00",
+ "updated_at": "2026-11-21T22:45:08+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 13,
-  "working": 2,
-  "idle": 12
+  "done_today": 14,
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-21T22:33:44+09:00",
+   "last_active": "2026-11-21T22:45:08+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-21T22:34:45+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-21T20:09:39+09:00"
   },
   {
    "id": "exaone",
@@ -135,6 +135,46 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-21T22:44:23+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T22:42:34+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T22:41:49+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T22:39:59+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-21T22:37:04+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-21T22:33:36+09:00",
    "kind": "dispatch",
@@ -334,46 +374,6 @@
    "to": "muse",
    "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-21T21:45:31+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-21T21:45:29+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-21T21:43:26+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-21T21:43:18+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-21T21:42:59+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -421,11 +421,11 @@
    "id": "reels",
    "name": "릴스 작업자",
    "role": "릴스 영상 제작",
-   "status": "idle",
-   "zone": "desk",
-   "bubble": "새 요청 기다리는 중",
-   "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-21T21:28:49+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "릴스 파이프라인 1건 완료",
+   "last_active": "2026-11-21T22:39:51+09:00"
   },
   {
    "id": "clip",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-21T22:33:28+09:00"
+   "last_active": "2026-11-21T22:44:40+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,18 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-21T22:39:51+09:00",
+   "agent": "reels",
+   "title": "릴스 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
+  {
+   "time": "2026-11-21T22:39:16+09:00",
+   "agent": "reels",
+   "title": "릴스 파이프라인 작업 시작",
+   "detail": "요청을 받아 제작을 시작"
+  },
   {
    "time": "2026-11-21T22:34:39+09:00",
    "agent": "shorts",
@@ -716,18 +728,6 @@
    "agent": "shorts",
    "title": "쇼츠 파이프라인 작업 시작",
    "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-21T11:21:00+09:00",
-   "agent": "blog-b",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 B · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-21T07:44:30+09:00",
-   "agent": "insight",
-   "title": "채널 지표 수집 1회 완료",
-   "detail": "하루 지표 수집"
   }
  ]
 }
