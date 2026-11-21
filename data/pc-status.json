@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-22T03:20:24+09:00",
+ "updated_at": "2026-11-22T03:29:06+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T03:17:32+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-22T03:20:28+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T03:25:30+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T03:17:31+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T01:15:13+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-22T03:20:19+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-22T03:25:47+09:00"
   },
   {
    "id": "insight",
