@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-22T00:55:53+09:00",
+ "updated_at": "2026-11-22T01:05:58+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 2,
-  "idle": 12
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T00:55:03+09:00",
+   "last_active": "2026-11-22T01:05:41+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
@@ -32,7 +32,7 @@
    "status": "working",
    "bubble": "웹 화면 조작 중",
    "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-22T00:55:53+09:00"
+   "last_active": "2026-11-22T01:05:58+09:00"
   },
   {
    "id": "exaone",
@@ -119,9 +119,9 @@
    "id": "routine",
    "name": "클라우드 루틴",
    "role": "새벽 키워드 수집",
-   "status": "idle",
-   "bubble": "다음 새벽 대기",
-   "task": "다음 새벽 실행 대기",
+   "status": "working",
+   "bubble": "새벽 키워드 수집 중",
+   "task": "예정 시간대 기준 표시 · 키워드 수집",
    "last_active": ""
   },
   {
@@ -135,6 +135,86 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T01:05:58+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:04:53+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:02:20+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:01:57+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:01:11+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:00:05+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T01:00:05+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "routine",
+   "title": "클라우드 루틴: 새벽 키워드 실행 시간",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T00:59:20+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T00:57:05+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T00:56:43+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T00:55:53+09:00",
    "kind": "report",
@@ -311,11 +391,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-22T00:52:19+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-22T01:03:26+09:00"
   },
   {
    "id": "insight",
