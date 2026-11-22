@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-23T00:51:04+09:00",
+ "updated_at": "2026-11-23T01:00:12+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
@@ -119,9 +119,9 @@
    "id": "routine",
    "name": "클라우드 루틴",
    "role": "새벽 키워드 수집",
-   "status": "idle",
-   "bubble": "다음 새벽 대기",
-   "task": "다음 새벽 실행 대기",
+   "status": "working",
+   "bubble": "새벽 키워드 수집 중",
+   "task": "예정 시간대 기준 표시 · 키워드 수집",
    "last_active": ""
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T01:00:12+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "routine",
+   "title": "클라우드 루틴: 새벽 키워드 실행 시간",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T00:43:51+09:00",
    "kind": "note",
@@ -263,11 +271,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T00:50:53+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-23T00:56:20+09:00"
   },
   {
    "id": "insight",
