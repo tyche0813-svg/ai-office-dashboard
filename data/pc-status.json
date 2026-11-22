@@ -1,29 +1,29 @@
 {
- "updated_at": "2026-11-22T19:40:48+09:00",
+ "updated_at": "2026-11-22T19:51:37+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
-  "working": 2,
-  "idle": 12
+  "working": 4,
+  "idle": 10
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T19:40:15+09:00",
+   "last_active": "2026-11-22T19:51:38+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 3명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-22T19:08:37+09:00"
+   "status": "working",
+   "bubble": "초안·사진 작업 중",
+   "task": "블로그 초안·사진 요청 처리 중",
+   "last_active": "2026-11-22T19:51:02+09:00"
   },
   {
    "id": "aside",
@@ -38,10 +38,10 @@
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "검사 요청 대기",
-   "last_active": "2026-11-22T14:08:18+09:00"
+   "status": "working",
+   "bubble": "문체 검사 중",
+   "task": "원고 문체 검사 진행 중",
+   "last_active": "2026-11-22T19:49:46+09:00"
   },
   {
    "id": "chatgpt",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-22T19:40:42+09:00"
+   "last_active": "2026-11-22T19:51:38+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,126 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T19:51:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:50:39+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:50:14+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:50:06+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:50:06+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:49:55+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:49:46+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:49:36+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:48:50+09:00",
+   "kind": "report",
+   "from": "muse",
+   "to": "opus",
+   "title": "뮤즈 → Opus 보조: 초안 전달",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T19:48:14+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:47:52+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:45:16+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:45:16+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:44:09+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T19:44:09+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T19:40:25+09:00",
    "kind": "dispatch",
@@ -260,126 +380,6 @@
    "to": "muse",
    "title": "클로드 → 뮤즈: 요청 전송",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:08:37+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T19:07:25+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:07:25+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:07:18+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T19:05:59+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T19:05:58+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:05:58+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:04:52+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:04:52+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:04:35+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T19:03:25+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:03:25+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:03:16+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T19:01:58+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T19:01:58+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,7 +391,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-22T19:40:18+09:00"
+   "last_active": "2026-11-22T19:51:29+09:00"
   },
   {
    "id": "blog-b",
@@ -441,7 +441,7 @@
    "zone": "desk",
    "bubble": "새 요청 기다리는 중",
    "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-22T19:13:02+09:00"
+   "last_active": "2026-11-22T19:42:54+09:00"
   },
   {
    "id": "carousel",
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-22T19:16:47+09:00"
+   "last_active": "2026-11-22T19:47:13+09:00"
   },
   {
    "id": "insight",
