@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T08:08:20+09:00",
+ "updated_at": "2026-11-23T08:11:19+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
@@ -387,10 +387,10 @@
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-23T07:56:13+09:00"
   },
   {
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T08:07:32+09:00"
+   "last_active": "2026-11-23T08:10:38+09:00"
   },
   {
    "id": "insight",
