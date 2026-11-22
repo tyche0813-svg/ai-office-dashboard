@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-22T17:15:25+09:00",
+ "updated_at": "2026-11-22T17:25:37+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T17:15:25+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-22T17:20:34+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T17:25:37+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T17:16:35+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T17:15:51+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T17:15:25+09:00",
    "kind": "note",
@@ -350,30 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T14:41:23+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "opus",
-   "title": "클로드 → Opus 보조: 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T14:39:54+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T14:33:43+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-22T17:12:10+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-22T17:23:07+09:00"
   },
   {
    "id": "insight",
