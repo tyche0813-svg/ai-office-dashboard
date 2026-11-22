@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T02:12:53+09:00",
+ "updated_at": "2026-11-23T02:23:44+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T01:20:32+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-23T02:22:39+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T02:20:29+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T01:25:36+09:00",
    "kind": "note",
@@ -291,7 +299,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T02:12:43+09:00"
+   "last_active": "2026-11-23T02:23:35+09:00"
   },
   {
    "id": "insight",
