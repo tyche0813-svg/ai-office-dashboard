@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T07:58:13+09:00",
+ "updated_at": "2026-11-23T08:00:50+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 3,
-  "idle": 11
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T07:56:54+09:00",
+   "last_active": "2026-11-23T07:59:57+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,9 +29,9 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "에디터 입력 중",
-   "task": "블로그 에디터 입력·임시저장 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "대기 · 브라우저 켜져 있음",
    "last_active": "2026-11-23T07:56:13+09:00"
   },
   {
@@ -101,9 +101,9 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "working",
-   "bubble": "블로그 슬롯 작업 중",
-   "task": "블로그 슬롯 원고 작업 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-23T07:56:40+09:00"
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T08:00:50+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T07:56:20+09:00",
    "kind": "report",
@@ -372,14 +380,6 @@
    "to": "claude",
    "title": "클로드: 작업 마침 · 대기",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T06:31:14+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
   }
  ],
  "agents": [
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T07:58:00+09:00"
+   "last_active": "2026-11-23T08:00:04+09:00"
   },
   {
    "id": "insight",
