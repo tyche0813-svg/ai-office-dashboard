@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-22T19:09:14+09:00",
+ "updated_at": "2026-11-22T19:20:36+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
@@ -11,18 +11,18 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T18:20:29+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-22T19:20:29+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-22T19:08:37+09:00"
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T19:20:36+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-22T19:08:52+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T18:54:56+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
   }
  ],
  "agents": [
@@ -435,7 +435,7 @@
    "zone": "desk",
    "bubble": "새 요청 기다리는 중",
    "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-22T18:43:53+09:00"
+   "last_active": "2026-11-22T19:13:02+09:00"
   },
   {
    "id": "carousel",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-22T18:46:14+09:00"
+   "last_active": "2026-11-22T19:16:47+09:00"
   },
   {
    "id": "insight",
