@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-22T18:18:31+09:00",
+ "updated_at": "2026-11-22T18:28:50+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-22T17:46:06+09:00",
+   "last_active": "2026-11-22T18:20:29+09:00",
    "status": "idle",
    "bubble": "지시 대기",
    "task": "대기 · 다음 지시 확인 중"
@@ -23,16 +23,16 @@
    "status": "working",
    "bubble": "대본·음성 작업 중",
    "task": "영상 대본·음성 요청 처리 중",
-   "last_active": "2026-11-22T18:16:43+09:00"
+   "last_active": "2026-11-22T18:19:08+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-22T18:18:31+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-22T14:19:43+09:00"
   },
   {
    "id": "exaone",
@@ -65,10 +65,10 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "idle",
-   "bubble": "호출 대기",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
    "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-22T17:48:43+09:00"
+   "last_active": "2026-11-22T18:18:44+09:00"
   },
   {
    "id": "claudeapi",
@@ -135,6 +135,110 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-22T18:28:28+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:27:23+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:26:39+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:25:33+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:25:33+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:24:27+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:23:21+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:22:36+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:21:30+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:20:46+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:19:08+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-22T18:18:58+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-22T18:18:44+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "speech",
+   "title": "영상 편집실 → Azure Speech: 음성 합성",
+   "coarse": true
+  },
   {
    "time": "2026-11-22T18:18:31+09:00",
    "kind": "dispatch",
@@ -270,110 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:43:59+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-22T17:43:48+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:43:26+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:37:36+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:25:37+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:16:35+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:15:51+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T17:15:25+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T16:41:27+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T16:36:24+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T16:25:30+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T16:18:36+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-22T15:31:42+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
   }
  ],
  "agents": [
@@ -433,9 +433,9 @@
    "role": "클립 영상 제작",
    "status": "working",
    "zone": "desk",
-   "bubble": "대본 작성 중",
-   "task": "클립 파이프라인 1건 진행 중 · 대본 작성",
-   "last_active": "2026-11-22T18:15:53+09:00"
+   "bubble": "음성 생성 중",
+   "task": "클립 파이프라인 1건 진행 중 · 음성 생성",
+   "last_active": "2026-11-22T18:18:44+09:00"
   },
   {
    "id": "carousel",
@@ -471,10 +471,10 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
    "last_active": "2026-11-22T18:15:44+09:00"
   },
   {
@@ -489,6 +489,12 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-22T18:19:08+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-22T18:16:43+09:00",
    "agent": "muse",
