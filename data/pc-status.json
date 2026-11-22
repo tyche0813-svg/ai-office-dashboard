@@ -1,28 +1,28 @@
 {
- "updated_at": "2026-11-23T07:56:20+09:00",
+ "updated_at": "2026-11-23T07:58:13+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 5,
-  "idle": 9
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T07:56:13+09:00",
+   "last_active": "2026-11-23T07:56:54+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 4명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-23T07:48:12+09:00"
   },
   {
@@ -38,9 +38,9 @@
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "working",
-   "bubble": "문체 검사 중",
-   "task": "원고 문체 검사 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "검사 요청 대기",
    "last_active": "2026-11-23T07:46:45+09:00"
   },
   {
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-23T07:56:13+09:00"
+   "last_active": "2026-11-23T07:56:40+09:00"
   },
   {
    "id": "fable",
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T07:55:56+09:00"
+   "last_active": "2026-11-23T07:58:00+09:00"
   },
   {
    "id": "insight",
