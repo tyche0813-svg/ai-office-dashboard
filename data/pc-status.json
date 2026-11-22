@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-23T08:13:34+09:00",
+ "updated_at": "2026-11-23T08:16:34+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
@@ -11,7 +11,7 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T08:13:31+09:00",
+   "last_active": "2026-11-23T08:16:35+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
    "task": "지시받은 작업 지휘 중 · AI 1명 가동"
@@ -29,8 +29,8 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "요청 대기",
    "task": "대기 · 브라우저 켜져 있음",
    "last_active": "2026-11-23T07:56:13+09:00"
   },
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "맡은 작업 진행 중",
    "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-23T08:13:34+09:00"
+   "last_active": "2026-11-23T08:16:28+09:00"
   },
   {
    "id": "fable",
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T08:12:42+09:00"
+   "last_active": "2026-11-23T08:15:49+09:00"
   },
   {
    "id": "insight",
