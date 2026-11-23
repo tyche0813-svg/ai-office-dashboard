@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T01:35:33+09:00",
+ "updated_at": "2026-11-24T01:45:21+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
@@ -11,10 +11,10 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T01:30:25+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-24T01:41:03+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -119,9 +119,9 @@
    "id": "routine",
    "name": "클라우드 루틴",
    "role": "새벽 키워드 수집",
-   "status": "working",
-   "bubble": "새벽 키워드 수집 중",
-   "task": "예정 시간대 기준 표시 · 키워드 수집",
+   "status": "idle",
+   "bubble": "다음 새벽 대기",
+   "task": "다음 새벽 실행 대기",
    "last_active": ""
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T01:41:03+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T01:35:33+09:00",
    "kind": "note",
@@ -319,11 +327,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-24T01:31:32+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-24T01:42:54+09:00"
   },
   {
    "id": "insight",
