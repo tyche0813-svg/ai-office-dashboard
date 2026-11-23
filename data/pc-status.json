@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-23T13:00:37+09:00",
+ "updated_at": "2026-11-23T13:05:00+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-23T12:59:55+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -110,8 +110,8 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-23T12:43:09+09:00"
   },
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T13:05:00+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T13:00:37+09:00",
    "kind": "report",
@@ -366,14 +374,6 @@
    "to": "claude",
    "title": "Opus 보조 → 클로드: 작업 보고",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T11:58:02+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "claude",
-   "title": "어사이드 → 클로드: 임시저장 1건 완료",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-23T12:30:56+09:00"
+   "last_active": "2026-11-23T13:01:14+09:00"
   },
   {
    "id": "insight",
