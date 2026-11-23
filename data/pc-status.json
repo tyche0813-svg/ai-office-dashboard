@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T23:27:47+09:00",
+ "updated_at": "2026-11-23T23:37:37+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
-  "working": 0,
-  "idle": 14
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T23:22:36+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-23T23:37:15+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-23T22:12:35+09:00"
+   "status": "working",
+   "bubble": "맡은 작업 진행 중",
+   "task": "지시받은 작업 진행 중",
+   "last_active": "2026-11-23T23:37:35+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,46 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T23:36:53+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-23T23:30:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-23T23:30:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-23T23:28:56+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-23T23:28:13+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T23:27:47+09:00",
    "kind": "note",
@@ -334,46 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:47:06+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:45:58+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:44:27+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:42:33+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:38:11+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -401,10 +401,10 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-23T22:54:10+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T23:24:52+09:00"
+   "last_active": "2026-11-23T23:36:04+09:00"
   },
   {
    "id": "insight",
