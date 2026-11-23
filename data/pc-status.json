@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T18:18:49+09:00",
+ "updated_at": "2026-11-23T18:24:37+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T18:08:04+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-23T18:23:53+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -110,8 +110,8 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-23T18:04:26+09:00"
   },
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T18:20:41+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T18:13:25+09:00",
    "kind": "note",
@@ -361,14 +369,6 @@
   },
   {
    "time": "2026-11-23T14:47:36+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-23T14:43:32+09:00",
    "kind": "dispatch",
    "from": "opus",
    "to": "aside",
