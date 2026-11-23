@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-23T22:02:38+09:00",
+ "updated_at": "2026-11-23T22:12:40+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
-  "working": 1,
-  "idle": 13
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T22:00:00+09:00",
+   "last_active": "2026-11-23T22:12:35+09:00",
    "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-23T21:52:02+09:00"
   },
@@ -65,8 +65,8 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-23T21:51:38+09:00"
   },
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-23T21:52:57+09:00"
+   "status": "working",
+   "bubble": "맡은 작업 진행 중",
+   "task": "지시받은 작업 진행 중",
+   "last_active": "2026-11-23T22:12:35+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T22:03:26+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T22:00:22+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "muse",
    "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-23T21:18:45+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
   }
  ],
  "agents": [
@@ -391,10 +391,10 @@
    "id": "blog-b",
    "name": "블로그팀 B",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-23T21:52:27+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T22:01:59+09:00"
+   "last_active": "2026-11-23T22:12:36+09:00"
   },
   {
    "id": "insight",
