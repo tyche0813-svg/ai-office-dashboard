@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T22:12:40+09:00",
+ "updated_at": "2026-11-23T22:22:40+09:00",
  "source": "pc",
  "summary": {
   "done_today": 7,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T22:12:35+09:00",
+   "last_active": "2026-11-23T22:20:29+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -101,9 +101,9 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "working",
-   "bubble": "맡은 작업 진행 중",
-   "task": "지시받은 작업 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-23T22:12:35+09:00"
   },
   {
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T22:16:48+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T22:03:26+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:19:16+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -421,10 +421,10 @@
    "id": "reels",
    "name": "릴스 작업자",
    "role": "릴스 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "릴스 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-23T22:02:25+09:00"
   },
   {
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T22:12:36+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-23T22:18:11+09:00"
   },
   {
    "id": "insight",
