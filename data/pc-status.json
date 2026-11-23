@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-23T16:22:49+09:00",
+ "updated_at": "2026-11-23T16:31:31+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-23T16:20:29+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T16:25:45+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T16:18:49+09:00",
    "kind": "report",
@@ -366,14 +374,6 @@
    "to": "claude",
    "title": "어사이드 → 클로드: 임시저장 1건 완료",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T14:21:28+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T16:22:37+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-23T16:28:11+09:00"
   },
   {
    "id": "insight",
