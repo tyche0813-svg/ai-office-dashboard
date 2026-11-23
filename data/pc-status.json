@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-23T22:53:00+09:00",
+ "updated_at": "2026-11-23T23:02:58+09:00",
  "source": "pc",
  "summary": {
   "done_today": 8,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-23T22:53:00+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-23T22:57:37+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T23:02:58+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T22:53:00+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "opus",
    "title": "클로드 → Opus 보조: 작업 배정",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T21:24:05+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -401,11 +401,11 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "다음 슬롯 대기",
-   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
-   "last_active": "2026-11-23T17:57:40+09:00"
+   "bubble": "원고 작성·검수 중",
+   "task": "블로그 원고 1건 작성·검수 중",
+   "last_active": "2026-11-23T22:54:10+09:00"
   },
   {
    "id": "shorts",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-23T22:51:26+09:00"
+   "last_active": "2026-11-23T23:02:43+09:00"
   },
   {
    "id": "insight",
