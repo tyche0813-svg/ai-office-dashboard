@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-23T18:08:38+09:00",
+ "updated_at": "2026-11-23T18:18:49+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-23T18:08:04+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-23T18:13:25+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-23T18:08:38+09:00",
    "kind": "report",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-23T14:38:28+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -381,30 +381,30 @@
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-23T17:57:41+09:00"
   },
   {
    "id": "blog-b",
    "name": "블로그팀 B",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-23T17:57:41+09:00"
   },
   {
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-23T17:57:40+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-23T17:45:13+09:00"
+   "last_active": "2026-11-23T18:15:40+09:00"
   },
   {
    "id": "insight",
