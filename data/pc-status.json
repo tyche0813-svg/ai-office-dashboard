@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-24T22:28:44+09:00",
+ "updated_at": "2026-11-24T22:47:01+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T22:20:30+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-24T22:46:59+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T22:47:01+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T22:25:49+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-24T20:36:36+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-24T22:28:42+09:00"
+   "last_active": "2026-11-24T22:45:31+09:00"
   },
   {
    "id": "insight",
