@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-24T20:46:48+09:00",
+ "updated_at": "2026-11-24T20:56:39+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 2,
-  "idle": 12
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -12,16 +12,16 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-24T20:46:47+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-24T20:36:36+09:00"
   },
@@ -38,8 +38,8 @@
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "검사 요청 대기",
    "last_active": "2026-11-24T20:35:22+09:00"
   },
@@ -101,9 +101,9 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "working",
-   "bubble": "블로그 슬롯 작업 중",
-   "task": "블로그 슬롯 원고 작업 진행 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-24T20:45:37+09:00"
   },
   {
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T20:51:56+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T20:49:46+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T20:46:04+09:00",
    "kind": "dispatch",
@@ -358,22 +374,6 @@
    "to": "claude",
    "title": "클로드: 작업 시작",
    "coarse": false
-  },
-  {
-   "time": "2026-11-24T20:00:47+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T19:55:38+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-24T20:18:19+09:00"
+   "last_active": "2026-11-24T20:48:51+09:00"
   },
   {
    "id": "insight",
