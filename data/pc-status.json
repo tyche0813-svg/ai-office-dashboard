@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-24T09:13:12+09:00",
+ "updated_at": "2026-11-24T09:25:34+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T09:13:13+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-24T09:20:29+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T09:25:34+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T09:20:30+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T09:18:42+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T09:13:12+09:00",
    "kind": "note",
@@ -350,30 +374,6 @@
    "to": "opus",
    "title": "어사이드 → Opus 보조: 에디터 입력 기록",
    "coarse": true
-  },
-  {
-   "time": "2026-11-24T07:39:19+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T07:39:03+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 에디터 입력 지시",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-24T07:38:34+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "opus",
-   "title": "클로드 → Opus 보조: 작업 배정",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-24T09:09:27+09:00"
+   "last_active": "2026-11-24T09:20:25+09:00"
   },
   {
    "id": "insight",
