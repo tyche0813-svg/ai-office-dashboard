@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-24T18:02:11+09:00",
+ "updated_at": "2026-11-24T18:10:57+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T18:02:07+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-24T18:05:49+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-24T17:45:56+09:00"
   },
@@ -65,8 +65,8 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-24T17:45:30+09:00"
   },
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "idle",
-   "bubble": "지시 대기",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
    "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-24T15:26:12+09:00"
+   "last_active": "2026-11-24T18:05:40+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T18:10:57+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T18:09:52+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T18:04:26+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T18:02:11+09:00",
    "kind": "note",
@@ -349,30 +373,6 @@
    "from": "",
    "to": "claude",
    "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T16:01:44+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T15:56:36+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T15:31:17+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
    "coarse": false
   }
  ],
