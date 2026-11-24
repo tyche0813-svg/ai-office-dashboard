@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T18:53:25+09:00",
+ "updated_at": "2026-11-24T19:04:07+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
@@ -11,7 +11,7 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T18:53:16+09:00",
+   "last_active": "2026-11-24T19:03:52+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
    "task": "지시받은 작업 지휘 중 · AI 2명 가동"
@@ -20,19 +20,19 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-24T17:45:56+09:00"
+   "status": "working",
+   "bubble": "초안·사진 작업 중",
+   "task": "블로그 초안·사진 요청 처리 중",
+   "last_active": "2026-11-24T19:04:07+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "에디터 입력 중",
-   "task": "블로그 에디터 입력·임시저장 진행 중",
-   "last_active": "2026-11-24T18:53:25+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-24T14:21:11+09:00"
   },
   {
    "id": "exaone",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-24T18:53:16+09:00"
+   "last_active": "2026-11-24T19:03:52+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,62 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T19:04:07+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T19:02:38+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T19:01:53+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T19:01:53+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T19:00:04+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T19:00:04+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "muse",
+   "title": "Opus 보조 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T18:55:42+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T18:53:25+09:00",
    "kind": "dispatch",
@@ -324,62 +380,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-24T17:50:19+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T17:49:13+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T17:48:07+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T17:45:56+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-24T17:45:34+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T17:45:30+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-24T17:45:12+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,7 +391,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-24T18:53:17+09:00"
+   "last_active": "2026-11-24T19:03:44+09:00"
   },
   {
    "id": "blog-b",
@@ -431,7 +431,7 @@
    "zone": "desk",
    "bubble": "새 요청 기다리는 중",
    "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-23T22:44:18+09:00"
+   "last_active": "2026-11-24T17:19:36+09:00"
   },
   {
    "id": "clip",
@@ -520,6 +520,18 @@
    "detail": "대본 또는 음성 생성 요청"
   },
   {
+   "time": "2026-11-24T17:11:34+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-24T17:08:11+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
    "time": "2026-11-24T13:52:00+09:00",
    "agent": "blog-c",
    "title": "블로그 원고 1건 임시저장",
@@ -545,6 +557,18 @@
   },
   {
    "time": "2026-11-24T13:13:39+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-24T10:40:59+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-24T10:36:41+09:00",
    "agent": "muse",
    "title": "외부 AI 요청 1건",
    "detail": "대본 또는 음성 생성 요청"
