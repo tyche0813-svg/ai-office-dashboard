@@ -1,28 +1,28 @@
 {
- "updated_at": "2026-11-24T21:20:17+09:00",
+ "updated_at": "2026-11-24T21:28:12+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 3,
-  "working": 4,
-  "idle": 10
+  "done_today": 4,
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T21:18:43+09:00",
+   "last_active": "2026-11-24T21:26:34+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 3명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-24T21:14:27+09:00"
   },
   {
@@ -65,9 +65,9 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "working",
-   "bubble": "음성 합성 중",
-   "task": "음성 합성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-24T21:14:02+09:00"
   },
   {
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "working",
-   "bubble": "맡은 작업 진행 중",
-   "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-24T21:18:43+09:00"
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
+   "last_active": "2026-11-24T21:23:42+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T21:27:50+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T21:24:10+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T21:19:53+09:00",
    "kind": "dispatch",
@@ -358,22 +374,6 @@
    "to": "exaone",
    "title": "Opus 보조 → 엑사원: 문체 검사 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-24T20:33:03+09:00",
-   "kind": "report",
-   "from": "muse",
-   "to": "opus",
-   "title": "뮤즈 → Opus 보조: 초안 전달",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-24T20:31:57+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -411,11 +411,11 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "음성 생성 중",
-   "task": "쇼츠 파이프라인 1건 진행 중 · 음성 생성",
-   "last_active": "2026-11-24T21:14:02+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "쇼츠 파이프라인 1건 완료",
+   "last_active": "2026-11-24T21:23:13+09:00"
   },
   {
    "id": "reels",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-24T21:16:44+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-24T21:28:14+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,12 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-24T21:23:13+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
   {
    "time": "2026-11-24T21:14:27+09:00",
    "agent": "muse",
