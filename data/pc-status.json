@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-24T09:37:13+09:00",
+ "updated_at": "2026-11-24T09:45:25+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 2,
-  "idle": 12
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-24T09:37:12+09:00",
-   "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "last_active": "2026-11-24T09:37:52+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-24T09:37:13+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-24T07:45:07+09:00"
   },
   {
    "id": "exaone",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T09:42:53+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T09:37:13+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "opus",
    "title": "어사이드 → Opus 보조: 에디터 입력 기록",
    "coarse": true
-  },
-  {
-   "time": "2026-11-24T07:39:57+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-24T09:36:54+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-24T09:42:24+09:00"
   },
   {
    "id": "insight",
