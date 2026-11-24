@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-25T08:14:16+09:00",
+ "updated_at": "2026-11-25T08:22:17+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-25T08:00:00+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-25T08:22:17+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,8 +29,8 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "요청 대기",
    "task": "대기 · 브라우저 켜져 있음",
    "last_active": "2026-11-25T07:58:56+09:00"
   },
@@ -101,8 +101,8 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-25T07:59:43+09:00"
   },
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-25T08:21:55+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-25T08:20:28+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-25T08:05:16+09:00",
    "kind": "note",
@@ -353,22 +369,6 @@
   },
   {
    "time": "2026-11-25T07:47:48+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-25T07:47:13+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-25T07:46:41+09:00",
    "kind": "report",
    "from": "aside",
    "to": "opus",
