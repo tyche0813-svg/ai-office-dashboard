@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-24T17:32:00+09:00",
+ "updated_at": "2026-11-24T17:41:07+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
@@ -20,10 +20,10 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-24T14:13:23+09:00"
+   "status": "working",
+   "bubble": "대본·음성 작업 중",
+   "task": "영상 대본·음성 요청 처리 중",
+   "last_active": "2026-11-24T17:41:05+09:00"
   },
   {
    "id": "aside",
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-24T17:41:05+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-24T17:40:45+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-24T17:40:45+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
   {
    "time": "2026-11-24T17:25:50+09:00",
    "kind": "note",
@@ -350,30 +374,6 @@
    "to": "muse",
    "title": "Opus 보조 → 뮤즈: 요청 전송",
    "coarse": false
-  },
-  {
-   "time": "2026-11-24T14:21:20+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "claude",
-   "title": "어사이드 → 클로드: 임시저장 1건 완료",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-24T14:21:11+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-24T14:20:48+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -431,11 +431,11 @@
    "id": "clip",
    "name": "클립 작업자",
    "role": "클립 영상 제작",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "새 요청 기다리는 중",
-   "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-24T14:02:09+09:00"
+   "bubble": "대본 작성 중",
+   "task": "클립 파이프라인 1건 진행 중 · 대본 작성",
+   "last_active": "2026-11-24T17:40:38+09:00"
   },
   {
    "id": "carousel",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-24T17:28:50+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-24T17:39:50+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,12 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-24T17:41:05+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-24T13:52:00+09:00",
    "agent": "blog-c",
