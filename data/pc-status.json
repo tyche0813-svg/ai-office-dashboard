@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-25T21:43:48+09:00",
+ "updated_at": "2026-11-25T21:52:38+09:00",
  "source": "pc",
  "summary": {
   "done_today": 5,
-  "working": 2,
-  "idle": 12
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-25T21:43:35+09:00",
+   "last_active": "2026-11-25T21:52:36+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-25T21:43:48+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-25T20:40:03+09:00"
   },
   {
    "id": "exaone",
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-25T21:38:35+09:00"
+   "last_active": "2026-11-25T21:49:36+09:00"
   },
   {
    "id": "insight",
