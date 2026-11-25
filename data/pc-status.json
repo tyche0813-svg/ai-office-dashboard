@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-25T23:33:33+09:00",
+ "updated_at": "2026-11-25T23:41:17+09:00",
  "source": "pc",
  "summary": {
   "done_today": 6,
-  "working": 2,
-  "idle": 12
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -20,9 +20,9 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-25T23:26:19+09:00"
   },
   {
@@ -65,9 +65,9 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "working",
-   "bubble": "음성 합성 중",
-   "task": "음성 합성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-25T23:25:55+09:00"
   },
   {
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-25T23:30:07+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-25T23:41:17+09:00"
   },
   {
    "id": "insight",
