@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-25T08:37:51+09:00",
+ "updated_at": "2026-11-25T09:06:46+09:00",
  "source": "pc",
  "summary": {
   "done_today": 1,
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-25T08:36:15+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-25T09:03:38+09:00"
   },
   {
    "id": "insight",
