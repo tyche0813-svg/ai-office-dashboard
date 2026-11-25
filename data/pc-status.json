@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-25T10:08:09+09:00",
+ "updated_at": "2026-11-25T10:18:19+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-25T10:08:00+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-25T10:08:48+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-25T10:14:00+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-25T10:08:09+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "muse",
    "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-25T09:28:28+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -401,10 +401,10 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-25T09:41:09+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-25T10:04:01+09:00"
+   "last_active": "2026-11-25T10:14:59+09:00"
   },
   {
    "id": "insight",
