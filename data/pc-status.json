@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-25T15:41:52+09:00",
+ "updated_at": "2026-11-25T15:49:52+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-25T15:41:40+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "last_active": "2026-11-25T15:42:29+09:00",
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-25T15:47:42+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-25T15:39:43+09:00",
    "kind": "note",
@@ -366,14 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-25T14:27:51+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -411,10 +411,10 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "한 건 끝! 잠깐 휴식",
-   "task": "쇼츠 파이프라인 1건 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
    "last_active": "2026-11-25T15:25:38+09:00"
   },
   {
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-25T15:38:52+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-25T15:49:50+09:00"
   },
   {
    "id": "insight",
