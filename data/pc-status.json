@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-26T21:35:44+09:00",
+ "updated_at": "2026-11-26T21:47:31+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 3,
-  "idle": 11
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-26T21:34:51+09:00",
+   "last_active": "2026-11-26T21:47:32+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "working",
-   "bubble": "맡은 작업 진행 중",
-   "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-26T21:35:34+09:00"
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
+   "last_active": "2026-11-26T21:43:13+09:00"
   },
   {
    "id": "fable",
@@ -113,7 +113,7 @@
    "status": "working",
    "bubble": "앱·화면 개발 중",
    "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-26T21:33:47+09:00"
+   "last_active": "2026-11-26T21:47:32+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,46 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-26T21:47:31+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T21:42:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T21:40:54+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T21:39:05+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T21:37:16+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-26T21:35:21+09:00",
    "kind": "dispatch",
@@ -334,46 +374,6 @@
    "to": "muse",
    "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-26T20:25:28+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-26T20:25:05+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-26T20:24:55+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T20:24:55+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T20:24:46+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-26T21:33:16+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-26T21:44:21+09:00"
   },
   {
    "id": "insight",
