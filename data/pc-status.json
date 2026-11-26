@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-26T14:52:36+09:00",
+ "updated_at": "2026-11-26T15:00:14+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 1,
-  "idle": 13
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -12,9 +12,9 @@
    "name": "클로드",
    "role": "지휘 · 관제",
    "last_active": "2026-11-26T14:51:59+09:00",
-   "status": "working",
-   "bubble": "작업 진행 중",
-   "task": "지시받은 작업 진행 중"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "대기 · 다음 지시 확인 중"
   },
   {
    "id": "muse",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-26T14:56:59+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
   {
    "time": "2026-11-26T14:52:36+09:00",
    "kind": "report",
@@ -366,14 +374,6 @@
    "to": "exaone",
    "title": "Opus 보조 → 엑사원: 문체 검사 요청",
    "coarse": true
-  },
-  {
-   "time": "2026-11-26T14:17:31+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -401,10 +401,10 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-26T14:25:11+09:00"
   },
   {
