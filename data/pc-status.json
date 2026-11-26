@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-26T19:51:06+09:00",
+ "updated_at": "2026-11-26T20:11:01+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 0,
-  "idle": 14
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-26T19:43:31+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-26T20:11:00+09:00",
+   "status": "working",
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,8 +29,8 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "요청 대기",
    "task": "대기 · 브라우저 켜져 있음",
    "last_active": "2026-11-26T19:39:44+09:00"
   },
@@ -38,8 +38,8 @@
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "검사 요청 대기",
    "last_active": "2026-11-26T19:33:40+09:00"
   },
@@ -101,8 +101,8 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-26T19:40:13+09:00"
   },
@@ -135,6 +135,30 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-26T20:11:01+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T20:00:33+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-26T19:55:30+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-26T19:48:34+09:00",
    "kind": "note",
@@ -356,30 +380,6 @@
     "aside",
     "muse"
    ]
-  },
-  {
-   "time": "2026-11-26T18:30:46+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "claude",
-   "title": "어사이드 → 클로드: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-26T14:18:15+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 에디터 입력 지시",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-26T14:17:57+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "exaone",
-   "title": "클로드 → 엑사원: 문체 검사 요청",
-   "coarse": true
   }
  ],
  "agents": [
@@ -387,10 +387,10 @@
    "id": "blog-a",
    "name": "블로그팀 A",
    "role": "블로그 원고 작성",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "원고 작성·검수 중",
-   "task": "블로그 원고 1건 작성·검수 중",
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "임시저장 끝, 잠깐 휴식",
+   "task": "블로그 원고 1건 임시저장 완료",
    "last_active": "2026-11-26T19:39:44+09:00"
   },
   {
