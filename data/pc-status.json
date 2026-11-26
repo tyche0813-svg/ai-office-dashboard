@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-26T23:28:19+09:00",
+ "updated_at": "2026-11-26T23:36:12+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 3,
-  "idle": 11
+  "working": 1,
+  "idle": 13
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-26T23:28:11+09:00",
+   "last_active": "2026-11-26T23:34:55+09:00",
    "status": "working",
-   "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "bubble": "작업 진행 중",
+   "task": "지시받은 작업 진행 중"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-26T23:28:19+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-26T20:30:56+09:00"
   },
   {
    "id": "exaone",
@@ -110,10 +110,10 @@
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "working",
-   "bubble": "앱·화면 개발 중",
-   "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-26T23:26:27+09:00"
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 작업 기록 있음 · 대기",
+   "last_active": "2026-11-26T23:31:38+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-26T23:35:49+09:00",
+   "kind": "report",
+   "from": "fable",
+   "to": "claude",
+   "title": "Fable → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-26T23:28:19+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "fable",
    "title": "클로드 → Fable: 개발 작업 배정",
    "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:15:49+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-26T23:24:38+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-26T23:36:02+09:00"
   },
   {
    "id": "insight",
