@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-26T23:50:11+09:00",
+ "updated_at": "2026-11-27T00:18:14+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 4,
+  "done_today": 0,
   "working": 0,
   "idle": 14
  },
@@ -22,7 +22,7 @@
    "role": "초안 · 사진",
    "status": "idle",
    "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
+   "task": "최근 호출 없음 · 대기",
    "last_active": "2026-11-26T20:25:51+09:00"
   },
   {
@@ -41,7 +41,7 @@
    "status": "idle",
    "bubble": "호출 대기",
    "task": "검사 요청 대기",
-   "last_active": "2026-11-26T20:30:34+09:00"
+   "last_active": "2026-11-12T17:11:11+09:00"
   },
   {
    "id": "chatgpt",
@@ -103,17 +103,17 @@
    "role": "블로그 슬롯 담당",
    "status": "idle",
    "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-26T22:47:19+09:00"
+   "task": "지시 대기",
+   "last_active": ""
   },
   {
    "id": "fable",
    "name": "Fable",
    "role": "앱 개발 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-26T23:31:38+09:00"
+   "status": "idle",
+   "bubble": "지시 대기",
+   "task": "지시 대기",
+   "last_active": ""
   },
   {
    "id": "routine",
@@ -134,248 +134,7 @@
    "last_active": ""
   }
  ],
- "events": [
-  {
-   "time": "2026-11-26T23:50:11+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:45:00+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:40:16+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:35:49+09:00",
-   "kind": "report",
-   "from": "fable",
-   "to": "claude",
-   "title": "Fable → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:28:19+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:25:41+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:25:18+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "fable",
-   "title": "클로드 → Fable: 개발 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:22:22+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:19:49+09:00",
-   "kind": "report",
-   "from": "fable",
-   "to": "claude",
-   "title": "Fable → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:13:57+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "fable",
-   "title": "클로드 → Fable: 개발 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:13:34+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T23:06:54+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:51:28+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:47:40+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:45:26+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:42:47+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:41:41+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "opus",
-   "title": "클로드 → Opus 보조: 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:34:21+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:20:29+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:15:04+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:07:00+09:00",
-   "kind": "report",
-   "from": "fable",
-   "to": "claude",
-   "title": "Fable → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T22:03:59+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "opus",
-   "title": "클로드 → Opus 보조: 작업 배정",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:47:31+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:42:02+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:40:54+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:39:05+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:37:16+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:35:21+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:34:37+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-26T21:33:31+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  }
- ],
+ "events": [],
  "agents": [
   {
    "id": "blog-a",
@@ -384,8 +143,8 @@
    "status": "idle",
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
-   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
-   "last_active": "2026-11-26T19:39:44+09:00"
+   "task": "다음 슬롯 대기",
+   "last_active": ""
   },
   {
    "id": "blog-b",
@@ -395,7 +154,7 @@
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
    "task": "다음 슬롯 대기",
-   "last_active": "2026-11-26T20:34:35+09:00"
+   "last_active": ""
   },
   {
    "id": "blog-c",
@@ -404,8 +163,8 @@
    "status": "idle",
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
-   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
-   "last_active": "2026-11-26T18:28:26+09:00"
+   "task": "다음 슬롯 대기",
+   "last_active": ""
   },
   {
    "id": "shorts",
@@ -475,49 +234,18 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-26T23:46:57+09:00"
+   "last_active": "2026-11-27T00:15:10+09:00"
   },
   {
    "id": "insight",
    "name": "인사이트 수집기",
    "role": "채널 지표 수집",
-   "status": "idle",
+   "status": "offline",
    "zone": "lounge",
-   "bubble": "오늘 수집 완료",
-   "task": "오늘 수집 완료 · 대기",
+   "bubble": "",
+   "task": "오늘 수집 기록 없음",
    "last_active": "2026-11-26T07:44:37+09:00"
   }
  ],
- "logs": [
-  {
-   "time": "2026-11-26T18:44:00+09:00",
-   "agent": "blog-a",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 A · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-26T13:52:00+09:00",
-   "agent": "blog-c",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 C · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-26T09:12:00+09:00",
-   "agent": "blog-c",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 C · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-26T07:44:37+09:00",
-   "agent": "insight",
-   "title": "채널 지표 수집 1회 완료",
-   "detail": "하루 지표 수집"
-  },
-  {
-   "time": "2026-11-26T07:13:00+09:00",
-   "agent": "blog-a",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 A · 초안·검수 후 임시저장"
-  }
- ]
+ "logs": []
 }
