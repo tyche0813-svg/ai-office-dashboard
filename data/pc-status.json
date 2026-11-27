@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T09:52:54+09:00",
+ "updated_at": "2026-11-27T10:25:20+09:00",
  "source": "pc",
  "summary": {
   "done_today": 2,
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-27T09:52:39+09:00"
+   "last_active": "2026-11-27T10:25:17+09:00"
   },
   {
    "id": "insight",
