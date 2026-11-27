@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T12:54:56+09:00",
+ "updated_at": "2026-11-27T13:06:33+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
@@ -401,10 +401,10 @@
    "id": "blog-c",
    "name": "블로그팀 C",
    "role": "블로그 원고 작성",
-   "status": "resting",
-   "zone": "lounge",
-   "bubble": "임시저장 끝, 잠깐 휴식",
-   "task": "블로그 원고 1건 임시저장 완료",
+   "status": "idle",
+   "zone": "desk",
+   "bubble": "다음 슬롯 대기",
+   "task": "오늘 원고 1건 임시저장 · 다음 슬롯 대기",
    "last_active": "2026-11-27T12:31:22+09:00"
   },
   {
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-27T12:31:01+09:00"
+   "last_active": "2026-11-27T13:01:20+09:00"
   },
   {
    "id": "insight",
