@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-27T21:11:30+09:00",
+ "updated_at": "2026-11-27T21:19:55+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 5,
+  "done_today": 6,
   "working": 2,
   "idle": 12
  },
@@ -11,28 +11,28 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-27T20:46:44+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-27T21:19:53+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
-   "last_active": "2026-11-27T21:11:30+09:00"
+   "status": "idle",
+   "bubble": "호출 대기",
+   "task": "오늘 호출 기록 있음 · 대기",
+   "last_active": "2026-11-27T18:29:11+09:00"
   },
   {
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-27T21:11:30+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-27T20:38:41+09:00"
   },
   {
    "id": "exaone",
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-27T20:43:24+09:00"
+   "status": "working",
+   "bubble": "맡은 작업 진행 중",
+   "task": "지시받은 작업 진행 중",
+   "last_active": "2026-11-27T21:19:48+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-27T21:19:55+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T21:19:33+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-27T21:11:30+09:00",
    "kind": "dispatch",
@@ -358,22 +374,6 @@
    "to": "opus",
    "title": "어사이드 → Opus 보조: 에디터 입력 기록",
    "coarse": true
-  },
-  {
-   "time": "2026-11-27T19:02:35+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T19:02:06+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
   }
  ],
  "agents": [
@@ -411,11 +411,11 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "작업 진행 중",
-   "task": "쇼츠 파이프라인 1건 진행 중",
-   "last_active": "2026-11-27T18:29:11+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "쇼츠 파이프라인 1건 완료",
+   "last_active": "2026-11-27T21:11:43+09:00"
   },
   {
    "id": "reels",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-27T21:11:06+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-27T21:16:38+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,12 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-27T21:11:43+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
   {
    "time": "2026-11-27T18:39:00+09:00",
    "agent": "blog-a",
