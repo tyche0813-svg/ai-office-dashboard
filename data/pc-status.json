@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-27T14:02:00+09:00",
+ "updated_at": "2026-11-27T14:12:35+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 3,
-  "idle": 11
+  "working": 4,
+  "idle": 10
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-27T14:01:53+09:00",
+   "last_active": "2026-11-27T14:12:03+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 3명 가동"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "idle",
-   "bubble": "요청 대기",
-   "task": "대기 · 브라우저 켜져 있음",
-   "last_active": "2026-11-27T12:29:31+09:00"
+   "status": "working",
+   "bubble": "에디터 입력 중",
+   "task": "블로그 에디터 입력·임시저장 진행 중",
+   "last_active": "2026-11-27T14:12:35+09:00"
   },
   {
    "id": "exaone",
@@ -41,7 +41,7 @@
    "status": "working",
    "bubble": "문체 검사 중",
    "task": "원고 문체 검사 진행 중",
-   "last_active": "2026-11-27T14:02:00+09:00"
+   "last_active": "2026-11-27T14:04:22+09:00"
   },
   {
    "id": "chatgpt",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-27T14:01:53+09:00"
+   "last_active": "2026-11-27T14:12:36+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,54 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-27T14:12:36+09:00",
+   "kind": "report",
+   "from": "aside",
+   "to": "opus",
+   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T14:12:13+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T14:11:31+09:00",
+   "kind": "report",
+   "from": "aside",
+   "to": "opus",
+   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T14:08:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 에디터 입력 지시",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T14:07:51+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T14:04:22+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
   {
    "time": "2026-11-27T13:58:01+09:00",
    "kind": "dispatch",
@@ -326,54 +374,6 @@
    "to": "opus",
    "title": "어사이드 → Opus 보조: 에디터 입력 기록",
    "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:27:03+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:26:50+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:26:28+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:26:01+09:00",
-   "kind": "report",
-   "from": "aside",
-   "to": "opus",
-   "title": "어사이드 → Opus 보조: 에디터 입력 기록",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:25:50+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 에디터 입력 지시",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T12:25:39+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -405,7 +405,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-27T14:01:54+09:00"
+   "last_active": "2026-11-27T14:12:36+09:00"
   },
   {
    "id": "shorts",
@@ -471,10 +471,10 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
    "last_active": "2026-11-27T14:01:53+09:00"
   },
   {
