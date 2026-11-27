@@ -1,28 +1,28 @@
 {
- "updated_at": "2026-11-27T22:32:09+09:00",
+ "updated_at": "2026-11-27T22:41:42+09:00",
  "source": "pc",
  "summary": {
   "done_today": 10,
-  "working": 3,
-  "idle": 11
+  "working": 2,
+  "idle": 12
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-27T22:32:10+09:00",
+   "last_active": "2026-11-27T22:41:24+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-27T22:24:12+09:00"
   },
   {
@@ -65,9 +65,9 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "working",
-   "bubble": "음성 합성 중",
-   "task": "음성 합성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-27T22:24:28+09:00"
   },
   {
@@ -101,10 +101,10 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-27T21:20:39+09:00"
+   "status": "working",
+   "bubble": "맡은 작업 진행 중",
+   "task": "지시받은 작업 진행 중",
+   "last_active": "2026-11-27T22:41:24+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,14 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-27T22:35:54+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
   {
    "time": "2026-11-27T22:29:32+09:00",
    "kind": "dispatch",
@@ -366,14 +374,6 @@
    "to": "muse",
    "title": "클로드 → 뮤즈: 요청 전송",
    "coarse": false
-  },
-  {
-   "time": "2026-11-27T20:51:55+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
   }
  ],
  "agents": [
@@ -431,11 +431,11 @@
    "id": "clip",
    "name": "클립 작업자",
    "role": "클립 영상 제작",
-   "status": "idle",
+   "status": "working",
    "zone": "desk",
-   "bubble": "새 요청 기다리는 중",
-   "task": "대기 · 새 요청 확인 중",
-   "last_active": "2026-11-27T22:29:48+09:00"
+   "bubble": "자막 맞추기 중",
+   "task": "클립 파이프라인 1건 진행 중 · 자막 맞추기",
+   "last_active": "2026-11-27T22:41:39+09:00"
   },
   {
    "id": "carousel",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "idle",
+   "status": "working",
    "zone": "reception",
-   "bubble": "다음 수집 대기",
-   "task": "대기 · 주기 수집",
-   "last_active": "2026-11-27T22:28:59+09:00"
+   "bubble": "발행 현황 수집 중",
+   "task": "발행 현황 수집 중",
+   "last_active": "2026-11-27T22:40:07+09:00"
   },
   {
    "id": "insight",
