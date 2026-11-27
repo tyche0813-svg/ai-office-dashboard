@@ -1,29 +1,29 @@
 {
- "updated_at": "2026-11-27T23:14:18+09:00",
+ "updated_at": "2026-11-27T23:22:26+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 11,
-  "working": 1,
-  "idle": 13
+  "done_today": 12,
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-27T23:09:05+09:00",
-   "status": "idle",
-   "bubble": "지시 대기",
-   "task": "대기 · 다음 지시 확인 중"
+   "last_active": "2026-11-27T23:21:49+09:00",
+   "status": "working",
+   "bubble": "작업 지시 중",
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
    "status": "working",
-   "bubble": "초안·사진 작업 중",
-   "task": "블로그 초안·사진 요청 처리 중",
-   "last_active": "2026-11-27T23:08:38+09:00"
+   "bubble": "대본·음성 작업 중",
+   "task": "영상 대본·음성 요청 처리 중",
+   "last_active": "2026-11-27T23:16:09+09:00"
   },
   {
    "id": "aside",
@@ -65,10 +65,10 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
-   "last_active": "2026-11-27T22:24:28+09:00"
+   "status": "working",
+   "bubble": "음성 합성 중",
+   "task": "음성 합성 요청 처리 중",
+   "last_active": "2026-11-27T23:15:38+09:00"
   },
   {
    "id": "claudeapi",
@@ -101,8 +101,8 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-27T22:59:34+09:00"
   },
@@ -135,6 +135,70 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-27T23:19:29+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T23:18:22+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T23:17:17+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T23:16:09+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T23:15:49+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "aside",
+   "title": "클로드 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T23:15:49+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "muse",
+   "title": "클로드 → 뮤즈: 요청 전송",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T23:15:38+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "muse",
+   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T23:15:38+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "speech",
+   "title": "영상 편집실 → Azure Speech: 음성 합성",
+   "coarse": true
+  },
   {
    "time": "2026-11-27T23:14:18+09:00",
    "kind": "note",
@@ -310,70 +374,6 @@
    "to": "aside",
    "title": "Opus 보조 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-27T22:59:36+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T22:59:23+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T22:56:51+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T22:56:26+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T22:56:18+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T22:56:04+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T22:55:56+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T22:54:49+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -411,11 +411,11 @@
    "id": "shorts",
    "name": "쇼츠 작업자",
    "role": "쇼츠 영상 제작",
-   "status": "working",
-   "zone": "desk",
-   "bubble": "기록 정리 중",
-   "task": "쇼츠 파이프라인 1건 진행 중 · 기록 정리",
-   "last_active": "2026-11-27T22:47:24+09:00"
+   "status": "resting",
+   "zone": "lounge",
+   "bubble": "한 건 끝! 잠깐 휴식",
+   "task": "쇼츠 파이프라인 1건 완료",
+   "last_active": "2026-11-27T23:21:20+09:00"
   },
   {
    "id": "reels",
@@ -431,11 +431,11 @@
    "id": "clip",
    "name": "클립 작업자",
    "role": "클립 영상 제작",
-   "status": "working",
+   "status": "idle",
    "zone": "desk",
-   "bubble": "결과물 정리 중",
-   "task": "클립 파이프라인 1건 진행 중 · 결과물 정리",
-   "last_active": "2026-11-27T23:14:08+09:00"
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
+   "last_active": "2026-11-27T23:15:25+09:00"
   },
   {
    "id": "carousel",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-27T23:13:48+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-27T23:19:17+09:00"
   },
   {
    "id": "insight",
@@ -489,6 +489,30 @@
   }
  ],
  "logs": [
+  {
+   "time": "2026-11-27T23:21:20+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 1건 완료",
+   "detail": "제작 단계를 마침"
+  },
+  {
+   "time": "2026-11-27T23:16:09+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
+  {
+   "time": "2026-11-27T23:15:38+09:00",
+   "agent": "shorts",
+   "title": "쇼츠 파이프라인 작업 시작",
+   "detail": "요청을 받아 제작을 시작"
+  },
+  {
+   "time": "2026-11-27T23:15:38+09:00",
+   "agent": "muse",
+   "title": "외부 AI 요청 1건",
+   "detail": "대본 또는 음성 생성 요청"
+  },
   {
    "time": "2026-11-27T22:56:51+09:00",
    "agent": "muse",
