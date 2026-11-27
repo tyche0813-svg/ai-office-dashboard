@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-27T23:54:24+09:00",
+ "updated_at": "2026-11-28T00:25:16+09:00",
  "source": "pc",
  "summary": {
-  "done_today": 12,
+  "done_today": 0,
   "working": 0,
   "idle": 14
  },
@@ -22,7 +22,7 @@
    "role": "초안 · 사진",
    "status": "idle",
    "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
+   "task": "최근 호출 없음 · 대기",
    "last_active": "2026-11-27T23:16:09+09:00"
   },
   {
@@ -41,7 +41,7 @@
    "status": "idle",
    "bubble": "호출 대기",
    "task": "검사 요청 대기",
-   "last_active": "2026-11-27T20:33:43+09:00"
+   "last_active": "2026-11-12T17:11:11+09:00"
   },
   {
    "id": "chatgpt",
@@ -67,7 +67,7 @@
    "role": "음성 합성",
    "status": "idle",
    "bubble": "호출 대기",
-   "task": "오늘 호출 기록 있음 · 대기",
+   "task": "최근 호출 없음 · 대기",
    "last_active": "2026-11-27T23:15:38+09:00"
   },
   {
@@ -103,8 +103,8 @@
    "role": "블로그 슬롯 담당",
    "status": "idle",
    "bubble": "지시 대기",
-   "task": "오늘 작업 기록 있음 · 대기",
-   "last_active": "2026-11-27T22:59:34+09:00"
+   "task": "지시 대기",
+   "last_active": ""
   },
   {
    "id": "fable",
@@ -134,248 +134,7 @@
    "last_active": ""
   }
  ],
- "events": [
-  {
-   "time": "2026-11-27T23:54:24+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:48:36+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:43:06+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:26:55+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:19:29+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:18:22+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:17:17+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:16:09+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:15:49+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:15:49+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:15:38+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "muse",
-   "title": "영상 편집실 → 뮤즈: 대본·음성 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:15:38+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "speech",
-   "title": "영상 편집실 → Azure Speech: 음성 합성",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:14:18+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:08:41+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:08:41+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:08:38+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:07:32+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:07:32+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:07:19+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:06:01+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:06:01+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:05:59+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:04:51+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:04:51+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:04:40+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:03:40+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:03:20+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "muse",
-   "title": "클로드 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  },
-  {
-   "time": "2026-11-27T23:02:11+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:02:11+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 요청 전송",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T23:02:01+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "muse",
-   "title": "Opus 보조 → 뮤즈: 초안·사진 요청",
-   "coarse": true
-  }
- ],
+ "events": [],
  "agents": [
   {
    "id": "blog-a",
@@ -384,8 +143,8 @@
    "status": "idle",
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
-   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
-   "last_active": "2026-11-27T19:05:02+09:00"
+   "task": "다음 슬롯 대기",
+   "last_active": ""
   },
   {
    "id": "blog-b",
@@ -395,7 +154,7 @@
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
    "task": "다음 슬롯 대기",
-   "last_active": "2026-11-27T20:42:53+09:00"
+   "last_active": ""
   },
   {
    "id": "blog-c",
@@ -404,8 +163,8 @@
    "status": "idle",
    "zone": "desk",
    "bubble": "다음 슬롯 대기",
-   "task": "오늘 원고 2건 임시저장 · 다음 슬롯 대기",
-   "last_active": "2026-11-27T14:14:42+09:00"
+   "task": "다음 슬롯 대기",
+   "last_active": ""
   },
   {
    "id": "shorts",
@@ -475,199 +234,18 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-27T23:52:27+09:00"
+   "last_active": "2026-11-28T00:25:14+09:00"
   },
   {
    "id": "insight",
    "name": "인사이트 수집기",
    "role": "채널 지표 수집",
-   "status": "idle",
+   "status": "offline",
    "zone": "lounge",
-   "bubble": "오늘 수집 완료",
-   "task": "오늘 수집 완료 · 대기",
+   "bubble": "",
+   "task": "오늘 수집 기록 없음",
    "last_active": "2026-11-27T07:44:31+09:00"
   }
  ],
- "logs": [
-  {
-   "time": "2026-11-27T23:21:20+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T23:16:09+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T23:15:38+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T23:15:38+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:56:51+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:47:24+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T22:47:21+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T22:44:14+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:29:18+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T22:28:05+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T22:24:27+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T22:24:24+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T22:24:12+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:23:17+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T22:23:13+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T22:23:09+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T22:20:53+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:18:32+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T22:18:03+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T21:11:43+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T18:39:00+09:00",
-   "agent": "blog-a",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 A · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-27T18:29:11+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T18:29:11+09:00",
-   "agent": "muse",
-   "title": "외부 AI 요청 1건",
-   "detail": "대본 또는 음성 생성 요청"
-  },
-  {
-   "time": "2026-11-27T18:14:43+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T13:52:00+09:00",
-   "agent": "blog-c",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 C · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-27T12:10:00+09:00",
-   "agent": "blog-c",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 C · 초안·검수 후 임시저장"
-  },
-  {
-   "time": "2026-11-27T08:26:49+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 1건 완료",
-   "detail": "제작 단계를 마침"
-  },
-  {
-   "time": "2026-11-27T07:52:14+09:00",
-   "agent": "shorts",
-   "title": "쇼츠 파이프라인 작업 시작",
-   "detail": "요청을 받아 제작을 시작"
-  },
-  {
-   "time": "2026-11-27T07:44:31+09:00",
-   "agent": "insight",
-   "title": "채널 지표 수집 1회 완료",
-   "detail": "하루 지표 수집"
-  },
-  {
-   "time": "2026-11-27T07:27:00+09:00",
-   "agent": "blog-a",
-   "title": "블로그 원고 1건 임시저장",
-   "detail": "블로그팀 A · 초안·검수 후 임시저장"
-  }
- ]
+ "logs": []
 }
