@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-28T05:52:40+09:00",
+ "updated_at": "2026-11-28T06:22:34+09:00",
  "source": "pc",
  "summary": {
   "done_today": 0,
@@ -11,7 +11,7 @@
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-28T05:47:29+09:00",
+   "last_active": "2026-11-28T05:55:56+09:00",
    "status": "idle",
    "bubble": "지시 대기",
    "task": "대기 · 다음 지시 확인 중"
@@ -101,8 +101,8 @@
    "id": "opus",
    "name": "Opus 보조",
    "role": "블로그 슬롯 담당",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "지시 대기",
    "task": "오늘 작업 기록 있음 · 대기",
    "last_active": "2026-11-28T05:47:12+09:00"
   },
@@ -135,6 +135,22 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-28T06:01:00+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 마침 · 대기",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T05:55:58+09:00",
+   "kind": "note",
+   "from": "",
+   "to": "claude",
+   "title": "클로드: 작업 시작",
+   "coarse": false
+  },
   {
    "time": "2026-11-28T05:52:40+09:00",
    "kind": "note",
@@ -358,22 +374,6 @@
    "to": "claude",
    "title": "클로드: 작업 시작",
    "coarse": false
-  },
-  {
-   "time": "2026-11-28T03:57:19+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T03:56:35+09:00",
-   "kind": "dispatch",
-   "from": "claude",
-   "to": "aside",
-   "title": "클로드 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-28T05:52:20+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-28T06:19:28+09:00"
   },
   {
    "id": "insight",
