@@ -1,27 +1,27 @@
 {
- "updated_at": "2026-11-27T18:48:00+09:00",
+ "updated_at": "2026-11-27T18:56:28+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 2,
-  "idle": 12
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-27T18:47:13+09:00",
+   "last_active": "2026-11-27T18:56:20+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 1명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-27T18:29:11+09:00"
   },
@@ -38,10 +38,10 @@
    "id": "exaone",
    "name": "엑사원",
    "role": "문체 검사",
-   "status": "idle",
-   "bubble": "호출 대기",
-   "task": "검사 요청 대기",
-   "last_active": "2026-11-27T14:04:22+09:00"
+   "status": "working",
+   "bubble": "문체 검사 중",
+   "task": "원고 문체 검사 진행 중",
+   "last_active": "2026-11-27T18:56:11+09:00"
   },
   {
    "id": "chatgpt",
@@ -65,8 +65,8 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "resting",
-   "bubble": "방금 마침 · 휴식",
+   "status": "idle",
+   "bubble": "호출 대기",
    "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-27T18:29:11+09:00"
   },
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "블로그 슬롯 작업 중",
    "task": "블로그 슬롯 원고 작업 진행 중",
-   "last_active": "2026-11-27T18:48:00+09:00"
+   "last_active": "2026-11-27T18:56:24+09:00"
   },
   {
    "id": "fable",
@@ -135,6 +135,62 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-27T18:56:11+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T18:55:55+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T18:55:22+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "exaone",
+   "title": "Opus 보조 → 엑사원: 문체 검사 요청",
+   "coarse": true
+  },
+  {
+   "time": "2026-11-27T18:51:45+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T18:51:00+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T18:49:33+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-27T18:48:26+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
   {
    "time": "2026-11-27T18:46:54+09:00",
    "kind": "dispatch",
@@ -324,62 +380,6 @@
    "to": "claude",
    "title": "클로드: 작업 마침 · 대기",
    "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:27:51+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:24:13+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:19:27+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:17:17+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:15:27+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:13:59+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-27T15:12:53+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -391,7 +391,7 @@
    "zone": "desk",
    "bubble": "원고 작성·검수 중",
    "task": "블로그 원고 1건 작성·검수 중",
-   "last_active": "2026-11-27T18:47:59+09:00"
+   "last_active": "2026-11-27T18:56:24+09:00"
   },
   {
    "id": "blog-b",
@@ -481,7 +481,7 @@
    "zone": "reception",
    "bubble": "다음 수집 대기",
    "task": "대기 · 주기 수집",
-   "last_active": "2026-11-27T18:19:02+09:00"
+   "last_active": "2026-11-27T18:49:23+09:00"
   },
   {
    "id": "insight",
