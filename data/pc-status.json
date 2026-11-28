@@ -1,20 +1,20 @@
 {
- "updated_at": "2026-11-28T15:18:58+09:00",
+ "updated_at": "2026-11-28T15:29:24+09:00",
  "source": "pc",
  "summary": {
   "done_today": 3,
-  "working": 4,
-  "idle": 10
+  "working": 3,
+  "idle": 11
  },
  "cast": [
   {
    "id": "claude",
    "name": "클로드",
    "role": "지휘 · 관제",
-   "last_active": "2026-11-28T15:18:56+09:00",
+   "last_active": "2026-11-28T15:29:26+09:00",
    "status": "working",
    "bubble": "작업 지시 중",
-   "task": "지시받은 작업 지휘 중 · AI 3명 가동"
+   "task": "지시받은 작업 지휘 중 · AI 2명 가동"
   },
   {
    "id": "muse",
@@ -29,10 +29,10 @@
    "id": "aside",
    "name": "어사이드",
    "role": "브라우저 · 에디터 조작",
-   "status": "working",
-   "bubble": "웹 화면 조작 중",
-   "task": "브라우저 웹 작업 진행 중",
-   "last_active": "2026-11-28T15:18:58+09:00"
+   "status": "idle",
+   "bubble": "요청 대기",
+   "task": "대기 · 브라우저 켜져 있음",
+   "last_active": "2026-11-28T11:38:26+09:00"
   },
   {
    "id": "exaone",
@@ -104,7 +104,7 @@
    "status": "working",
    "bubble": "맡은 작업 진행 중",
    "task": "지시받은 작업 진행 중",
-   "last_active": "2026-11-28T15:18:41+09:00"
+   "last_active": "2026-11-28T15:29:14+09:00"
   },
   {
    "id": "fable",
@@ -113,7 +113,7 @@
    "status": "working",
    "bubble": "앱·화면 개발 중",
    "task": "앱 개발 작업 진행 중",
-   "last_active": "2026-11-28T15:18:21+09:00"
+   "last_active": "2026-11-28T15:29:26+09:00"
   },
   {
    "id": "routine",
@@ -135,6 +135,62 @@
   }
  ],
  "events": [
+  {
+   "time": "2026-11-28T15:29:02+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:27:10+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "fable",
+   "title": "클로드 → Fable: 개발 작업 배정",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:26:26+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:24:36+09:00",
+   "kind": "dispatch",
+   "from": "opus",
+   "to": "aside",
+   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:23:31+09:00",
+   "kind": "dispatch",
+   "from": "claude",
+   "to": "opus",
+   "title": "클로드 → Opus 보조: 작업 배정",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:23:31+09:00",
+   "kind": "report",
+   "from": "fable",
+   "to": "claude",
+   "title": "Fable → 클로드: 작업 보고",
+   "coarse": false
+  },
+  {
+   "time": "2026-11-28T15:22:46+09:00",
+   "kind": "report",
+   "from": "opus",
+   "to": "claude",
+   "title": "Opus 보조 → 클로드: 작업 보고",
+   "coarse": false
+  },
   {
    "time": "2026-11-28T15:18:58+09:00",
    "kind": "dispatch",
@@ -318,62 +374,6 @@
    "to": "aside",
    "title": "클로드 → 어사이드: 화면 작업 지시",
    "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:41:10+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 시작",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:36:49+09:00",
-   "kind": "note",
-   "from": "",
-   "to": "claude",
-   "title": "클로드: 작업 마침 · 대기",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:32:24+09:00",
-   "kind": "report",
-   "from": "opus",
-   "to": "claude",
-   "title": "Opus 보조 → 클로드: 작업 보고",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:22:32+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:20:20+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:18:51+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
-  },
-  {
-   "time": "2026-11-28T14:17:44+09:00",
-   "kind": "dispatch",
-   "from": "opus",
-   "to": "aside",
-   "title": "Opus 보조 → 어사이드: 화면 작업 지시",
-   "coarse": false
   }
  ],
  "agents": [
@@ -475,7 +475,7 @@
    "zone": "reception",
    "bubble": "발행 현황 수집 중",
    "task": "발행 현황 수집 중",
-   "last_active": "2026-11-28T15:17:07+09:00"
+   "last_active": "2026-11-28T15:28:09+09:00"
   },
   {
    "id": "insight",
