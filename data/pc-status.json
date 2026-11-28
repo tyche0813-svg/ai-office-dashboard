@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-28T22:05:35+09:00",
+ "updated_at": "2026-11-28T22:14:44+09:00",
  "source": "pc",
  "summary": {
   "done_today": 4,
-  "working": 2,
-  "idle": 12
+  "working": 0,
+  "idle": 14
  },
  "cast": [
   {
@@ -20,9 +20,9 @@
    "id": "muse",
    "name": "뮤즈",
    "role": "초안 · 사진",
-   "status": "working",
-   "bubble": "대본·음성 작업 중",
-   "task": "영상 대본·음성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-28T21:59:56+09:00"
   },
   {
@@ -65,9 +65,9 @@
    "id": "speech",
    "name": "Azure Speech",
    "role": "음성 합성",
-   "status": "working",
-   "bubble": "음성 합성 중",
-   "task": "음성 합성 요청 처리 중",
+   "status": "resting",
+   "bubble": "방금 마침 · 휴식",
+   "task": "오늘 호출 기록 있음 · 대기",
    "last_active": "2026-11-28T21:59:30+09:00"
   },
   {
@@ -431,11 +431,11 @@
    "id": "clip",
    "name": "클립 작업자",
    "role": "클립 영상 제작",
-   "status": "working",
+   "status": "idle",
    "zone": "desk",
-   "bubble": "자막 맞추기 중",
-   "task": "클립 파이프라인 1건 진행 중 · 자막 맞추기",
-   "last_active": "2026-11-28T22:05:33+09:00"
+   "bubble": "새 요청 기다리는 중",
+   "task": "대기 · 새 요청 확인 중",
+   "last_active": "2026-11-28T22:12:52+09:00"
   },
   {
    "id": "carousel",
@@ -471,11 +471,11 @@
    "id": "pubcheck",
    "name": "발행 체크 수집기",
    "role": "발행 현황 수집",
-   "status": "working",
+   "status": "idle",
    "zone": "reception",
-   "bubble": "발행 현황 수집 중",
-   "task": "발행 현황 수집 중",
-   "last_active": "2026-11-28T22:05:33+09:00"
+   "bubble": "다음 수집 대기",
+   "task": "대기 · 주기 수집",
+   "last_active": "2026-11-28T22:11:29+09:00"
   },
   {
    "id": "insight",
